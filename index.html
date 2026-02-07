@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arianna Vulnerability Management Platform</title>
+  <!-- Self-contained: no external font or asset requests. -->
+  <style>
+    :root {
+      --ink: #0f1e2b;
+      --muted: #5b6b7a;
+      --accent: #1aa5a7;
+      --accent-2: #8fd7d9;
+      --bg: #f4f7f8;
+      --card: #ffffff;
+      --line: #e2e8ec;
+      --shadow: 0 24px 60px rgba(15, 30, 43, 0.12);
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: "Sora", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .page {
+      overflow: hidden;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 8vw;
+      position: sticky;
+      top: 0;
+      background: rgba(244, 247, 248, 0.9);
+      backdrop-filter: blur(8px);
+      z-index: 10;
+      border-bottom: 1px solid rgba(226, 232, 236, 0.6);
+    }
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      color: var(--muted);
+    }
+    .nav-cta {
+      padding: 10px 18px;
+      background: var(--ink);
+      color: white;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .hero {
+      padding: 80px 8vw 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 48px;
+      align-items: center;
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      right: -160px;
+      top: -160px;
+      background: radial-gradient(circle, rgba(26, 165, 167, 0.22), rgba(26, 165, 167, 0));
+      z-index: 0;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      left: -140px;
+      bottom: -120px;
+      background: radial-gradient(circle, rgba(15, 30, 43, 0.18), rgba(15, 30, 43, 0));
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    h1 {
+      font-family: "Merriweather", "Iowan Old Style", "Times New Roman", serif;
+      font-weight: 700;
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: 1.1;
+      margin: 18px 0 20px;
+    }
+    .hero p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0 0 28px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .button {
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid var(--ink);
+    }
+    .button.primary {
+      background: var(--ink);
+      color: white;
+    }
+    .button.ghost {
+      background: transparent;
+      color: var(--ink);
+    }
+    .hero-card {
+      position: relative;
+      z-index: 1;
+      background: var(--card);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    .hero-card img,
+    .hero-card svg {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+    }
+    .stats {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+    }
+    .stat {
+      background: #edf2f3;
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
+    }
+    .stat strong {
+      display: block;
+      font-size: 20px;
+    }
+    .logo-row {
+      padding: 20px 8vw 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .logos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 24px;
+      padding: 0 8vw 50px;
+    }
+    .logo-pill {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 12px 18px;
+      text-align: center;
+      font-size: 12px;
+      color: #7b8b98;
+    }
+    .section {
+      padding: 70px 8vw;
+    }
+    .section-title {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 42px;
+    }
+    .section-title h2 {
+      font-family: "Merriweather", serif;
+      font-size: clamp(26px, 3vw, 40px);
+      margin: 0 0 10px;
+    }
+    .section-title p {
+      color: var(--muted);
+      margin: 0;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .feature-card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      box-shadow: 0 20px 40px rgba(15, 30, 43, 0.08);
+    }
+    .feature-card h3 {
+      margin: 14px 0 8px;
+      font-size: 18px;
+    }
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    }
+    .split {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      align-items: center;
+    }
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .pill {
+      padding: 10px 16px;
+      background: white;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    blockquote {
+      margin: 0;
+      padding: 32px;
+      background: white;
+      border-radius: 20px;
+      border-left: 6px solid var(--accent);
+      font-size: 15px;
+      color: var(--muted);
+      box-shadow: 0 18px 40px rgba(15, 30, 43, 0.08);
+    }
+    .quote-name {
+      margin-top: 16px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .form-card {
+      background: var(--ink);
+      color: white;
+      border-radius: 24px;
+      padding: 32px;
+      display: grid;
+      gap: 16px;
+    }
+    .form-card label {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .form-card input,
+    .form-card textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: none;
+      margin-top: 6px;
+      font-family: inherit;
+    }
+    .form-card button {
+      padding: 12px;
+      border-radius: 999px;
+      border: none;
+      font-weight: 600;
+      background: var(--accent);
+      color: var(--ink);
+    }
+    footer {
+      padding: 40px 8vw 60px;
+      background: #0b1823;
+      color: rgba(255, 255, 255, 0.7);
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+    footer h4 {
+      color: white;
+      margin: 0 0 10px;
+    }
+    .logo {
+      height: 44px;
+      width: auto;
+    }
+    .logo svg {
+      height: 44px;
+      width: auto;
+      display: block;
+    }
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none;
+      }
+      .hero {
+        padding-top: 50px;
+      }
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav">
+      <div class="logo" aria-label="Arianna">
+        <svg viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg" role="img">
+          <defs>
+            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1aa5a7" />
+              <stop offset="100%" stop-color="#0f1e2b" />
+            </linearGradient>
+          </defs>
+          <rect x="4" y="10" width="60" height="60" rx="18" fill="url(#logoGradient)" />
+          <path d="M32 30l16 20-16 20" fill="none" stroke="#f4f7f8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="78" y="52" font-family="Sora, Avenir Next, Arial, sans-serif" font-size="30" font-weight="600" fill="#0f1e2b">Arianna</text>
+        </svg>
+      </div>
+      <div class="nav-links">
+        <a href="#platform">Platform</a>
+        <a href="#features">Features</a>
+        <a href="#coverage">Coverage</a>
+        <a href="#demo">Schedule a Demo</a>
+      </div>
+      <a class="nav-cta" href="#demo">Book a Demo</a>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Vulnerability Management Platform</div>
+        <h1>The product security management platform designed by experts.</h1>
+        <p>
+          Arianna helps device manufacturers identify, triage, address, and report vulnerabilities across hardware and software components. Build SBOMs and HBOMs, automate monitoring, and show compliance to global regulations from a single, elegant workspace.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#demo">Schedule a demo</a>
+          <a class="button ghost" href="#features">Jump to features</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>250K+</strong>Vulnerabilities monitored daily</div>
+          <div class="stat"><strong>100+</strong>Customers supported globally</div>
+          <div class="stat"><strong>7+</strong>Years in security research</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <svg viewBox="0 0 520 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arianna platform mockup">
+          <defs>
+            <linearGradient id="screenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#e7eff1" />
+              <stop offset="100%" stop-color="#f9fbfb" />
+            </linearGradient>
+            <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1aa5a7" />
+              <stop offset="100%" stop-color="#8fd7d9" />
+            </linearGradient>
+          </defs>
+          <rect x="20" y="20" width="480" height="440" rx="28" fill="url(#screenGradient)" stroke="#dfe6ea" />
+          <rect x="50" y="70" width="420" height="60" rx="16" fill="#ffffff" stroke="#e1e7eb"/>
+          <rect x="70" y="90" width="180" height="16" rx="8" fill="#c9d6dd"/>
+          <rect x="50" y="150" width="270" height="170" rx="20" fill="#ffffff" stroke="#e1e7eb"/>
+          <rect x="70" y="175" width="230" height="14" rx="7" fill="#c9d6dd"/>
+          <rect x="70" y="200" width="160" height="14" rx="7" fill="#e0e8ec"/>
+          <rect x="70" y="230" width="200" height="14" rx="7" fill="#e0e8ec"/>
+          <rect x="50" y="340" width="420" height="90" rx="20" fill="#ffffff" stroke="#e1e7eb"/>
+          <rect x="70" y="365" width="90" height="12" rx="6" fill="#c9d6dd"/>
+          <rect x="70" y="385" width="200" height="12" rx="6" fill="#e0e8ec"/>
+          <rect x="340" y="170" width="130" height="150" rx="20" fill="url(#cardGradient)"/>
+          <rect x="360" y="195" width="90" height="10" rx="5" fill="#0f1e2b" opacity="0.3"/>
+          <rect x="360" y="215" width="70" height="10" rx="5" fill="#0f1e2b" opacity="0.3"/>
+          <circle cx="420" cy="260" r="24" fill="#0f1e2b" opacity="0.2"/>
+        </svg>
+      </div>
+    </section>
+
+    <div class="logo-row">Trusted by teams building secure connected products</div>
+    <div class="logos">
+      <div class="logo-pill">Connected Devices</div>
+      <div class="logo-pill">Medical Technology</div>
+      <div class="logo-pill">Industrial Automation</div>
+      <div class="logo-pill">Automotive</div>
+      <div class="logo-pill">Consumer Electronics</div>
+      <div class="logo-pill">Energy & Utilities</div>
+    </div>
+
+    <section class="section" id="platform">
+      <div class="section-title">
+        <h2>Device manufacturers rely on Arianna to keep products secure and prove compliance.</h2>
+        <p>Designed around a robust vulnerability management process for connected devices and systems.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="icon"></div>
+          <h3>Save time and reduce cost</h3>
+          <p>Automate vulnerability tracking and prioritize fixes using enriched exploit intelligence and contextual risk scoring.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon"></div>
+          <h3>Reach compliance faster</h3>
+          <p>Generate SBOM, HBOM, and VEX reports that align with major regulations including RED DA, FDA, and CRA.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon"></div>
+          <h3>Accurate device visibility</h3>
+          <p>Build complete device models from software and hardware artifacts to close gaps between engineering and compliance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="section-title">
+        <h2>Key features</h2>
+        <p>Your complete solution for SBOM, HBOM, and vulnerability management.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="icon"></div>
+          <h3>SBOM creation & management</h3>
+          <p>Maintain accurate software component inventories with automated updates through APIs or the Arianna workspace.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon"></div>
+          <h3>HBOM creation & management</h3>
+          <p>Monitor hardware components with the same rigor as software to deliver end-to-end product security.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon"></div>
+          <h3>Continuous vulnerability identification</h3>
+          <p>Reduce false positives, auto-close patched vulnerabilities, and scan global databases daily.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon"></div>
+          <h3>Workflow-driven remediation</h3>
+          <p>Assign owners, track deadlines, and export audit-ready reports for every vulnerability lifecycle step.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon"></div>
+          <h3>Exploit intelligence</h3>
+          <p>Prioritize based on KEV, exploit maturity, attack vector, severity, and risk across your fleet.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon"></div>
+          <h3>Policy management</h3>
+          <p>Map internal and external requirements to enforce SLAs and stay ahead of compliance deadlines.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="coverage">
+      <div class="split">
+        <div>
+          <h2>Extensive support for all major languages, ecosystems, and build platforms.</h2>
+          <p style="color: var(--muted); line-height: 1.7;">
+            Arianna analyzes build artifacts to provide a complete device model, combining software and hardware bills of materials with precise vulnerability mapping.
+          </p>
+          <div class="pill-list" style="margin-top: 20px;">
+            <span class="pill">C/C++</span>
+            <span class="pill">Python</span>
+            <span class="pill">Java</span>
+            <span class="pill">.NET</span>
+            <span class="pill">Yocto</span>
+            <span class="pill">Android</span>
+            <span class="pill">OpenWRT</span>
+            <span class="pill">Debian</span>
+            <span class="pill">Buildroot</span>
+            <span class="pill">NPM</span>
+            <span class="pill">Maven</span>
+            <span class="pill">Gradle</span>
+          </div>
+        </div>
+        <blockquote>
+          "Connected device teams face fast-moving regulations and complex security challenges. Arianna simplifies the labyrinth with a unified, expert-built platform that keeps cybersecurity and compliance in lockstep."
+          <div class="quote-name">Arianna Product Team</div>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="section" id="demo">
+      <div class="split">
+        <div>
+          <h2>Schedule a demo</h2>
+          <p style="color: var(--muted); line-height: 1.7;">
+            Discover how Arianna helps device manufacturers secure embedded products throughout the product lifecycle. We will tailor the demo to your device stack and compliance requirements.
+          </p>
+        </div>
+        <form class="form-card">
+          <div>
+            <label>First name</label>
+            <input type="text" placeholder="Alex" />
+          </div>
+          <div>
+            <label>Last name</label>
+            <input type="text" placeholder="Johnson" />
+          </div>
+          <div>
+            <label>Business email</label>
+            <input type="email" placeholder="alex@company.com" />
+          </div>
+          <div>
+            <label>Message</label>
+            <textarea rows="4" placeholder="Tell us about your products and needs."></textarea>
+          </div>
+          <button type="submit">Book a Demo</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <div class="logo" aria-label="Arianna">
+          <svg viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg" role="img">
+            <defs>
+              <linearGradient id="logoGradientFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1aa5a7" />
+                <stop offset="100%" stop-color="#8fd7d9" />
+              </linearGradient>
+            </defs>
+            <rect x="4" y="10" width="60" height="60" rx="18" fill="url(#logoGradientFooter)" />
+            <path d="M32 30l16 20-16 20" fill="none" stroke="#0b1823" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="78" y="52" font-family="Sora, Avenir Next, Arial, sans-serif" font-size="30" font-weight="600" fill="#ffffff">Arianna</text>
+          </svg>
+        </div>
+        <p>Product security management for connected devices.</p>
+      </div>
+      <div>
+        <h4>Solutions</h4>
+        <p>SBOM & HBOM</p>
+        <p>Vulnerability management</p>
+        <p>Compliance reporting</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <p>About Arianna</p>
+        <p>Careers</p>
+        <p>Resources</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>hello@arianna.io</p>
+        <p>+1 (000) 000-0000</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
