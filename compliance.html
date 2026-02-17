@@ -82,7 +82,8 @@
       white-space: nowrap;
     }
     .nav-dropdown:hover .nav-dropdown-menu,
-    .nav-dropdown:focus-within .nav-dropdown-menu {
+    .nav-dropdown:focus-within .nav-dropdown-menu,
+    .nav-dropdown.is-open .nav-dropdown-menu {
       display: flex;
     }
     .nav-cta {
@@ -254,7 +255,28 @@
       color: var(--muted);
     }
     @media (max-width: 720px) {
-      .nav-links { display: none; }
+      .nav {
+        flex-wrap: wrap;
+        row-gap: 10px;
+      }
+      .nav-links {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 14px;
+        order: 3;
+      }
+      .nav-dropdown {
+        padding-bottom: 0;
+      }
+      .nav-dropdown-menu {
+        position: static;
+        margin-top: 6px;
+        box-shadow: none;
+      }
+      .nav-cta {
+        margin-left: auto;
+      }
     }
   </style>
 </head>
@@ -447,6 +469,49 @@
       if (closeButton) closeButton.addEventListener("click", closeOverlay);
       if (overlay) overlay.addEventListener("click", function (event) {
         if (event.target === overlay) closeOverlay();
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      var dropdowns = document.querySelectorAll(".nav-dropdown");
+      if (!dropdowns.length) return;
+
+      function isMobileNav() {
+        return window.matchMedia("(max-width: 720px)").matches;
+      }
+
+      function closeAll(exceptNode) {
+        dropdowns.forEach(function (dropdown) {
+          if (dropdown !== exceptNode) dropdown.classList.remove("is-open");
+        });
+      }
+
+      dropdowns.forEach(function (dropdown) {
+        var toggle = dropdown.querySelector(".nav-dropdown-toggle");
+        if (!toggle) return;
+
+        toggle.addEventListener("click", function (event) {
+          if (!isMobileNav()) return;
+          if (!dropdown.classList.contains("is-open")) {
+            event.preventDefault();
+            closeAll(dropdown);
+            dropdown.classList.add("is-open");
+          } else {
+            dropdown.classList.remove("is-open");
+          }
+        });
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!isMobileNav()) return;
+        dropdowns.forEach(function (dropdown) {
+          if (!dropdown.contains(event.target)) dropdown.classList.remove("is-open");
+        });
+      });
+
+      window.addEventListener("resize", function () {
+        if (!isMobileNav()) closeAll();
       });
     })();
   </script>
