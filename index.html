@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Arianna Vulnerability Management Platform</title>
+  <title>ARIANNA Vulnerability Management Platform</title>
   <!-- Self-contained: no external font or asset requests. -->
   <style>
     :root {
@@ -56,6 +56,43 @@
     }
     .nav-links a:hover {
       color: var(--ink);
+    }
+    .nav-dropdown {
+      position: relative;
+      padding-bottom: 8px;
+    }
+    .nav-dropdown-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-dropdown-caret {
+      font-size: 10px;
+      line-height: 1;
+    }
+    .nav-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 160px;
+      padding: 8px 0;
+      border-radius: 12px;
+      border: 1px solid rgba(226, 232, 236, 0.9);
+      background: #ffffff;
+      box-shadow: 0 12px 24px rgba(15, 30, 43, 0.12);
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      z-index: 20;
+    }
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 8px 14px;
+      white-space: nowrap;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu {
+      display: flex;
     }
     .nav-cta {
       padding: 10px 18px;
@@ -417,8 +454,8 @@
 <body>
   <div class="page">
     <nav class="nav">
-      <div class="logo" aria-label="Arianna">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 206.8 67.1" role="img" aria-label="Arianna logo">
+      <div class="logo" aria-label="ARIANNA">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 206.8 67.1" role="img" aria-label="ARIANNA logo">
           <defs>
             <style>
               .cls-1 {
@@ -442,12 +479,39 @@
         </svg>
       </div>
       <div class="nav-links">
-        <a href="#platform">Platform</a>
-        <a href="#features">Features</a>
-        <a href="industries.html">Industries</a>
-        <a href="compliance.html">Compliance</a>
-        <a href="company.html">Company</a>
-        <a href="#coverage">Coverage</a>
+        <div class="nav-dropdown">
+          <a class="nav-dropdown-toggle" href="#platform">Platform <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="#features">Features</a>
+            <a href="#platform">Devices</a>
+            <a href="#coverage">Language support</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a class="nav-dropdown-toggle" href="industries.html">Industries <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="industries.html#iot">IOT</a>
+            <a href="industries.html#industrial">Industrial</a>
+            <a href="industries.html#medical">Medical</a>
+            <a href="industries.html#consumer">Consumer</a>
+            <a href="industries.html#automotive">Automotive</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a class="nav-dropdown-toggle" href="compliance.html">Compliance <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="compliance.html#cra">CRA</a>
+            <a href="compliance.html#red">RED</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a class="nav-dropdown-toggle" href="company.html">Company <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="company.html#careers">Careers</a>
+            <a href="company.html#contact">Contact</a>
+            <a href="company.html#partners">Partners</a>
+          </div>
+        </div>
       </div>
       <a class="nav-cta" href="book-a-demo.html">Free demo or Trial</a>
     </nav>
@@ -457,7 +521,7 @@
         <div class="eyebrow" data-cms-key="hero_eyebrow">Vulnerability Management Platform</div>
         <h1 data-cms-key="hero_title">The product security management platform designed by experts.</h1>
         <p data-cms-key="hero_body">
-          Arianna helps device manufacturers identify, triage, address, and report vulnerabilities across hardware and software components. Build SBOMs and HBOMs, automate monitoring, and show compliance to global regulations from a single, elegant workspace.
+          ARIANNA helps device manufacturers identify, triage, address, and report vulnerabilities across hardware and software components. Build SBOMs and HBOMs, automate monitoring, and show compliance to global regulations from a single, elegant workspace.
         </p>
         <div class="hero-actions">
           <a class="button primary" href="book-a-demo.html" data-cms-key="hero_primary_cta">Free Demo or Trial</a>
@@ -470,11 +534,11 @@
         </div>
       </div>
       <div class="hero-card">
-        <img src="images/ARIANNA_mockup-2_lores.png" alt="Arianna platform mockup" />
+        <img src="images/ARIANNA_mockup-2_lores.png" alt="ARIANNA platform mockup" />
       </div>
     </section>
 
-    <div class="logo-row" data-cms-key="logo_row_title">Companies that use Arianna</div>
+    <div class="logo-row" data-cms-key="logo_row_title">Companies that use ARIANNA</div>
     <div class="logos">
       <div class="logo-pill" data-cms-key="logo_1">Company Logo</div>
       <div class="logo-pill" data-cms-key="logo_2">Company Logo</div>
@@ -486,7 +550,7 @@
 
     <section class="section" id="platform">
       <div class="section-title">
-        <h2 data-cms-key="platform_title">Device manufacturers rely on Arianna to keep products secure and prove compliance.</h2>
+        <h2 data-cms-key="platform_title">Device manufacturers rely on ARIANNA to keep products secure and prove compliance.</h2>
         <p data-cms-key="platform_subtitle">Designed around a robust vulnerability management process for connected devices and systems.</p>
       </div>
       <div class="feature-grid">
@@ -517,7 +581,7 @@
         <div class="feature-card">
           <div class="icon"></div>
           <h3 data-cms-key="feature1_title">SBOM creation & management</h3>
-          <p data-cms-key="feature1_body">Maintain accurate software component inventories with automated updates through APIs or the Arianna workspace.</p>
+          <p data-cms-key="feature1_body">Maintain accurate software component inventories with automated updates through APIs or the ARIANNA workspace.</p>
         </div>
         <div class="feature-card">
           <div class="icon"></div>
@@ -552,7 +616,7 @@
         <div>
           <h2 data-cms-key="coverage_title">Extensive support for all major languages, ecosystems, and build platforms.</h2>
           <p style="color: var(--muted); line-height: 1.7;" data-cms-key="coverage_body">
-            Arianna analyzes build artifacts to provide a complete device model, combining software and hardware bills of materials with precise vulnerability mapping.
+            ARIANNA analyzes build artifacts to provide a complete device model, combining software and hardware bills of materials with precise vulnerability mapping.
           </p>
           <div class="pill-list" style="margin-top: 20px;">
             <span class="pill">C/C++</span>
@@ -570,8 +634,8 @@
           </div>
         </div>
         <blockquote>
-          <span data-cms-key="coverage_quote">"Connected device teams face fast-moving regulations and complex security challenges. Arianna simplifies the labyrinth with a unified, expert-built platform that keeps cybersecurity and compliance in lockstep."</span>
-          <div class="quote-name" data-cms-key="coverage_quote_name">Arianna Product Team</div>
+          <span data-cms-key="coverage_quote">"Connected device teams face fast-moving regulations and complex security challenges. ARIANNA simplifies the labyrinth with a unified, expert-built platform that keeps cybersecurity and compliance in lockstep."</span>
+          <div class="quote-name" data-cms-key="coverage_quote_name">ARIANNA Product Team</div>
         </blockquote>
       </div>
     </section>
@@ -582,7 +646,7 @@
         <div>
           <h2 data-cms-key="demo_title">Schedule a demo</h2>
           <p style="color: var(--muted); line-height: 1.7;" data-cms-key="demo_body">
-            Discover how Arianna helps device manufacturers secure embedded products throughout the product lifecycle. We will tailor the demo to your device stack and compliance requirements.
+            Discover how ARIANNA helps device manufacturers secure embedded products throughout the product lifecycle. We will tailor the demo to your device stack and compliance requirements.
           </p>
         </div>
         <form class="form-card">
@@ -609,8 +673,8 @@
 
     <footer>
       <div>
-        <div class="logo" aria-label="Arianna">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 206.8 67.1" role="img" aria-label="Arianna logo">
+        <div class="logo" aria-label="ARIANNA">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 206.8 67.1" role="img" aria-label="ARIANNA logo">
             <defs>
               <style>
                 .cls-1 {
@@ -643,7 +707,7 @@
       </div>
       <div>
         <h4>Company</h4>
-        <p>About Arianna</p>
+        <p>About ARIANNA</p>
         <p>Careers</p>
         <p>Resources</p>
       </div>
@@ -656,7 +720,7 @@
     <div class="newsletter-overlay" id="newsletterOverlay" aria-hidden="true">
       <div class="newsletter-modal" role="dialog" aria-modal="true" aria-labelledby="newsletterTitle">
         <button class="newsletter-close" type="button" aria-label="Close">×</button>
-        <h3 id="newsletterTitle">Subscribe to the Arianna Newsletter</h3>
+        <h3 id="newsletterTitle">Subscribe to the ARIANNA Newsletter</h3>
         <p>Get monthly updates on vulnerability management, compliance changes, and product security insights.</p>
         <form class="newsletter-form">
           <input type="text" placeholder="Full name" aria-label="Full name" />

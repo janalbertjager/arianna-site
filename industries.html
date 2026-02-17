@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Arianna | Industries & Compliance</title>
+  <title>ARIANNA | Industries & Compliance</title>
   <style>
     :root {
       --ink: #0f1e2b;
@@ -47,6 +47,43 @@
     }
     .nav-links a:hover {
       color: var(--ink);
+    }
+    .nav-dropdown {
+      position: relative;
+      padding-bottom: 8px;
+    }
+    .nav-dropdown-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-dropdown-caret {
+      font-size: 10px;
+      line-height: 1;
+    }
+    .nav-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 160px;
+      padding: 8px 0;
+      border-radius: 12px;
+      border: 1px solid rgba(226, 232, 236, 0.9);
+      background: #ffffff;
+      box-shadow: 0 12px 24px rgba(15, 30, 43, 0.12);
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      z-index: 20;
+    }
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 8px 14px;
+      white-space: nowrap;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu {
+      display: flex;
     }
     .nav-cta {
       padding: 10px 18px;
@@ -253,8 +290,8 @@
 </head>
 <body>
   <nav class="nav">
-    <div class="logo" aria-label="Arianna">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 206.8 67.1" role="img" aria-label="Arianna logo">
+    <div class="logo" aria-label="ARIANNA">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 206.8 67.1" role="img" aria-label="ARIANNA logo">
         <defs>
           <style>
             .cls-1 {
@@ -278,11 +315,39 @@
       </svg>
     </div>
     <div class="nav-links">
-      <a href="index.html">Platform</a>
-      <a href="industries.html">Industries</a>
-      <a href="compliance.html">Compliance</a>
-      <a href="company.html">Company</a>
-      <a href="index.html#features">Features</a>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="index.html">Platform <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="index.html#features">Features</a>
+          <a href="index.html#platform">Devices</a>
+          <a href="index.html#coverage">Language support</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="industries.html">Industries <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="#iot">IOT</a>
+          <a href="#industrial">Industrial</a>
+          <a href="#medical">Medical</a>
+          <a href="#consumer">Consumer</a>
+          <a href="#automotive">Automotive</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="compliance.html">Compliance <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="compliance.html#cra">CRA</a>
+          <a href="compliance.html#red">RED</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="company.html">Company <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="company.html#careers">Careers</a>
+          <a href="company.html#contact">Contact</a>
+          <a href="company.html#partners">Partners</a>
+        </div>
+      </div>
     </div>
     <a class="nav-cta" href="book-a-demo.html">Free demo or Trial</a>
   </nav>
@@ -309,7 +374,7 @@
 
   <section class="section section-divider">
     <div class="grid">
-      <div class="card">
+      <div class="card" id="automotive">
         <div class="icon"></div>
         <h2 data-cms-key="auto_title">Automotive</h2>
         <p data-cms-key="auto_body">The automotive sector faces strict cybersecurity requirements for connected and autonomous vehicles. ARIANNA enables manufacturers and tier suppliers to build complete SBOMs/HBOMs, continuously monitor vulnerabilities, and manage them according to defined policies throughout the product lifecycle.</p>
@@ -326,7 +391,7 @@
         </ul>
       </div>
 
-      <div class="card">
+      <div class="card" id="industrial">
         <div class="icon"></div>
         <h2 data-cms-key="industrial_title">Industrial Automation</h2>
         <p data-cms-key="industrial_body">Industrial automation systems such as PLCs, SCADA, and control networks require robust vulnerability management and compliance with operational technology cybersecurity standards. ARIANNA’s platform helps by providing precise component inventories and continual risk assessment.</p>
@@ -343,7 +408,7 @@
         </ul>
       </div>
 
-      <div class="card">
+      <div class="card" id="medical">
         <div class="icon"></div>
         <h2 data-cms-key="medical_title">Medical Devices</h2>
         <p data-cms-key="medical_body">Medical device manufacturers must ensure device security and comply with regional medical regulations where cybersecurity evidence (such as SBOMs) plays a critical role in submissions. ARIANNA supports the inventory, vulnerability management, and reporting that regulators expect.</p>
@@ -361,9 +426,9 @@
         </ul>
       </div>
 
-      <div class="card">
+      <div class="card" id="consumer">
         <div class="icon"></div>
-        <h2 data-cms-key="iot_title">Consumer Electronics &amp; IoT</h2>
+        <h2 id="iot" data-cms-key="iot_title">Consumer Electronics &amp; IoT</h2>
         <p data-cms-key="iot_body">Connected consumer devices must adhere to best practices and emerging consumer cybersecurity guidelines. ARIANNA can generate and maintain component inventories and provide compliance artifacts for regulators and partners alike.</p>
         <h3>How ARIANNA is Used</h3>
         <ul class="list">
@@ -410,7 +475,7 @@
   <div class="newsletter-overlay" id="newsletterOverlay" aria-hidden="true">
     <div class="newsletter-modal" role="dialog" aria-modal="true" aria-labelledby="newsletterTitle">
       <button class="newsletter-close" type="button" aria-label="Close">×</button>
-      <h3 id="newsletterTitle">Subscribe to the Arianna Newsletter</h3>
+      <h3 id="newsletterTitle">Subscribe to the ARIANNA Newsletter</h3>
       <p>Get monthly updates on vulnerability management, compliance changes, and product security insights.</p>
       <form class="newsletter-form">
         <input type="text" placeholder="Full name" aria-label="Full name" />

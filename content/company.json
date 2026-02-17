@@ -1,13 +1,13 @@
 {
   "hero_eyebrow": "Company",
   "hero_title": "Built by product security specialists.",
-  "hero_body": "Arianna blends security research, device engineering, and compliance expertise to help teams build safer connected products.",
+  "hero_body": "ARIANNA blends security research, device engineering, and compliance expertise to help teams build safer connected products.",
   "pill_1": "Security Research",
   "pill_2": "Regulatory Expertise",
   "pill_3": "Device Supply Chains",
   "pill_4": "Embedded Systems",
   "quote_text": "Our mission is to make vulnerability management actionable for the teams building the products that power modern life.",
-  "quote_name": "Arianna Leadership",
+  "quote_name": "ARIANNA Leadership",
   "focus_title": "What we focus on",
   "focus_1_title": "Product security management",
   "focus_1_body": "We design workflows that unify SBOM/HBOM management with vulnerability tracking and remediation.",
@@ -22,6 +22,6 @@
   "help_2_body": "Generate documentation that satisfies regulators, customers, and internal governance teams.",
   "help_3_title": "Unify cross-functional teams",
   "help_3_body": "Bridge product, security, and compliance stakeholders with a shared source of truth.",
-  "cta_title": "Meet Arianna in action",
+  "cta_title": "Meet ARIANNA in action",
   "cta_body": "Book a tailored demo to explore how our team can support your security program."
 }
