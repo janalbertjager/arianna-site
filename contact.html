@@ -175,6 +175,12 @@
       margin-top: 6px;
       font-family: inherit;
     }
+    .phone-field {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 10px;
+      align-items: end;
+    }
     .form-card button {
       padding: 12px;
       border-radius: 999px;
@@ -379,15 +385,15 @@
     <form class="form-card">
       <div>
         <label>First name</label>
-        <input type="text" placeholder="Alex" />
+        <input type="text" placeholder="Alex" required />
       </div>
       <div>
         <label>Last name</label>
-        <input type="text" placeholder="Johnson" />
+        <input type="text" placeholder="Johnson" required />
       </div>
       <div>
           <label>Business email</label>
-          <input type="email" placeholder="alex@company.com" />
+          <input type="email" placeholder="alex.com" required />
         </div>
         <div>
           <label>Topic</label>
@@ -404,7 +410,18 @@
       </div>
       <div>
         <label>Phone</label>
-        <input type="tel" placeholder="+1 (000) 000-0000" />
+        <div class="phone-field">
+          <select aria-label="Country code">
+            <option value="+1">+1 (US)</option>
+            <option value="+31">+31 (NL)</option>
+            <option value="+39">+39 (IT)</option>
+            <option value="+44">+44 (UK)</option>
+            <option value="+49">+49 (DE)</option>
+            <option value="+33">+33 (FR)</option>
+            <option value="+91">+91 (IN)</option>
+          </select>
+          <input type="tel" placeholder="123 456 7890" inputmode="tel" pattern="[0-9][0-9\\s-]{5,14}" title="Use 6-15 digits; spaces or hyphens allowed." />
+        </div>
       </div>
       <button type="submit">Send Message</button>
     </form>
@@ -429,6 +446,7 @@
     </div>
     <div class="footer-contact">
       <h4><a href="contact.html">Contact</a></h4>
+      <p><a href="support.html">Support</a></p>
       <p><a href="mailto:hello@ariannateam.ai">hello@ariannateam.ai</a></p>
       <p><a href="tel:+393313482583">+39 331 3482583</a></p>
     </div>
@@ -440,7 +458,7 @@
       <p>Get monthly updates on vulnerability management, compliance changes, and product security insights.</p>
       <form class="newsletter-form">
         <input type="text" placeholder="Full name" aria-label="Full name" />
-        <input type="email" placeholder="Business email" aria-label="Business email" />
+        <input type="email" placeholder="Business email" aria-label="Business email" required />
         <button type="submit">Subscribe</button>
       </form>
     </div>

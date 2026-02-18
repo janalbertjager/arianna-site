@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ARIANNA | Resources</title>
+  <title>ARIANNA | Support</title>
   <style>
     :root {
       --ink: #0f1e2b;
@@ -118,11 +118,7 @@
     .logo svg { height: 88px; width: auto; display: block; }
 
     .hero {
-      padding: 70px 8vw 40px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 36px;
-      align-items: center;
+      padding: 70px 8vw 20px;
     }
     .eyebrow {
       font-size: 12px;
@@ -138,103 +134,79 @@
       line-height: 1.1;
       margin: 18px 0 16px;
     }
-    h2 {
-      font-family: "Merriweather", "Iowan Old Style", "Times New Roman", serif;
-      font-size: clamp(24px, 3vw, 36px);
-      margin: 0 0 10px;
-    }
-    h3 { margin: 14px 0 8px; font-size: 18px; }
     p {
       font-size: 16px;
       color: var(--muted);
       line-height: 1.7;
       margin: 0 0 18px;
     }
-    .section {
-      padding: 50px 8vw;
-    }
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
-    }
-    .feature-card {
-      background: var(--card);
-      border-radius: 20px;
-      padding: 22px;
-      border: 1px solid var(--line);
-      box-shadow: 0 20px 40px rgba(15, 30, 43, 0.08);
-    }
-    .icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    }
-    .list {
-      margin: 10px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 14px;
-    }
-    .cta {
-      background: #0b1823;
-      color: white;
-      padding: 50px 8vw;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-      align-items: center;
-    }
-    .cta p { color: rgba(255, 255, 255, 0.7); }
-    .cta a {
-      display: inline-block;
-      padding: 12px 20px;
-      border-radius: 999px;
-      background: var(--accent);
-      color: var(--ink);
+    .support-faq-link {
+      margin: 6px 0 18px;
+      font-size: 18px;
       font-weight: 600;
-      font-size: 14px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      line-height: 1.3;
     }
-    .cta a:hover {
-      background: #f28a1a;
-      color: #ffffff;
-      box-shadow: 0 12px 24px rgba(15, 30, 43, 0.18);
-      transform: translateY(-1px);
-    }
-    footer {
-      padding: 0 8vw 60px;
-      margin-top: -160px;
-      background: #0b1823;
-      color: rgba(255, 255, 255, 0.7);
-      display: flex;
-      gap: 48px;
-      justify-content: flex-end;
-      align-items: flex-start;
-    }
-    footer h4 {
-      color: white;
-      margin: 0 0 10px;
-    }
-    footer p {
-      margin: 0 0 8px;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 14px;
-      line-height: 1.5;
-    }
-    footer a {
-      color: inherit;
+    .support-faq-link a {
+      color: var(--ink);
       text-decoration: none;
-      transition: color 0.2s ease;
     }
-    footer a:hover {
+    .support-faq-link a:hover {
       color: var(--accent);
     }
-    .footer-contact {
-      justify-self: end;
-      align-self: start;
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 46%);
+      gap: 32px;
+      align-items: start;
+      padding: 70px 8vw 70px;
+    }
+    .split-content {
+      max-width: 760px;
+    }
+    .form-card {
+      background: var(--ink);
+      color: white;
+      border-radius: 24px;
+      padding: 32px;
+      display: grid;
+      gap: 16px;
+      box-shadow: var(--shadow);
+    }
+    .form-card label {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .form-card input,
+    .form-card textarea,
+    .form-card select {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: none;
+      margin-top: 6px;
+      font-family: inherit;
+    }
+    .phone-field {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 10px;
+      align-items: end;
+    }
+    .form-card button {
+      padding: 12px;
+      border-radius: 999px;
+      border: none;
+      font-weight: 600;
+      background: #f28a1a;
+      color: #ffffff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .form-card button:hover {
+      background: #3fbab7;
+      box-shadow: 0 12px 24px rgba(15, 30, 43, 0.25);
+      transform: translateY(-1px);
     }
     .newsletter-overlay {
       position: fixed;
@@ -291,6 +263,37 @@
       box-shadow: 0 12px 24px rgba(15, 30, 43, 0.18);
       transform: translateY(-1px);
     }
+    footer {
+      padding: 40px 8vw 60px;
+      background: #0b1823;
+      color: rgba(255, 255, 255, 0.7);
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      align-items: start;
+    }
+    footer h4 {
+      color: white;
+      margin: 0 0 10px;
+    }
+    footer p {
+      margin: 0 0 8px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    footer a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    footer a:hover {
+      color: var(--accent);
+    }
+    .footer-contact {
+      justify-self: end;
+      align-self: start;
+    }
     .newsletter-close {
       position: absolute;
       top: 12px;
@@ -323,6 +326,10 @@
       }
       .nav-cta {
         margin-left: auto;
+      }
+      .split {
+        grid-template-columns: 1fr;
+        padding-top: 30px;
       }
     }
   </style>
@@ -379,114 +386,76 @@
     <a class="nav-cta" href="book-a-demo.html">Free Demo or Trial</a>
   </nav>
 
-  <section class="hero">
-    <div>
-      <div class="eyebrow">Resources</div>
-      <h1>Insights, updates, and practical guidance.</h1>
-      <p>Explore ARIANNA resources to stay informed on vulnerability management, secure product development, and evolving cybersecurity regulations.</p>
-      <p>Use this page as your central hub for blog posts, newsletters, and in-depth articles.</p>
+  <section class="split" id="contact">
+    <div class="split-content">
+    <div class="eyebrow">Contact</div>
+    <h1>Support for ARIANNA</h1>
+    <p>Need help with ARIANNA? Submit your support request and our team will respond as quickly as possible.</p>
+    <p>Please provide as much detail as possible so we can troubleshoot efficiently.</p>
+      <h3 class="support-faq-link"><a href="resources.html#faq">Did you check the FAQ?</a></h3>
+      <h2>Submit a support request</h2>
+      <p>Use this form for technical support, account issues, and platform-related questions.</p>
     </div>
-    <div class="feature-card">
-      <div class="icon"></div>
-      <h3>Knowledge hub</h3>
-      <p>Curated content for security, product, and compliance teams working in critical industries.</p>
-    </div>
-  </section>
-
-  <section class="section" id="blog-posts">
-    <h2>Blog Posts</h2>
-    <div class="feature-grid" style="margin-top: 20px;">
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3>Latest Product Security Topics</h3>
-        <p>Space for short blog updates on vulnerability trends, product security practices, and ARIANNA platform updates.</p>
+    <form class="form-card">
+      <div>
+        <label>First name</label>
+        <input type="text" placeholder="Alex" required />
       </div>
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3>Implementation Notes</h3>
-        <p>Space for practical guidance from implementation projects, integrations, and workflow optimization tips.</p>
+      <div>
+        <label>Last name</label>
+        <input type="text" placeholder="Johnson" required />
       </div>
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3>Compliance Perspectives</h3>
-        <p>Space for blog commentary on how organizations can operationalize regulatory requirements efficiently.</p>
+      <div>
+          <label>Business email</label>
+          <input type="email" placeholder="alex.com" required />
+        </div>
+        <div>
+          <label>Support topic</label>
+          <select>
+            <option>Technical issue</option>
+            <option>Account access</option>
+            <option>Integration help</option>
+            <option>Other support</option>
+          </select>
+        </div>
+      <div>
+        <label>Message</label>
+        <textarea rows="4" placeholder="Describe the issue, expected behavior, and any relevant context."></textarea>
       </div>
-    </div>
-  </section>
-
-  <section class="section" id="newsletters">
-    <h2>Newsletters</h2>
-    <div class="feature-grid" style="margin-top: 20px;">
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3>Monthly Security Briefing</h3>
-        <p>Space for monthly roundups on cybersecurity developments relevant to connected and embedded products.</p>
+      <div>
+        <label>Phone</label>
+        <div class="phone-field">
+          <select aria-label="Country code">
+            <option value="+1">+1 (US)</option>
+            <option value="+31">+31 (NL)</option>
+            <option value="+39">+39 (IT)</option>
+            <option value="+44">+44 (UK)</option>
+            <option value="+49">+49 (DE)</option>
+            <option value="+33">+33 (FR)</option>
+            <option value="+91">+91 (IN)</option>
+          </select>
+          <input type="tel" placeholder="123 456 7890" inputmode="tel" pattern="[0-9][0-9\\s-]{5,14}" title="Use 6-15 digits; spaces or hyphens allowed." />
+        </div>
       </div>
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3>Regulatory Watch</h3>
-        <p>Space for newsletter content tracking standards, certification updates, and regulatory milestones.</p>
+      <div>
+        <label>Customer number</label>
+        <input type="text" placeholder="XX_XXXX" pattern="[A-Za-z0-9]{2}_[A-Za-z0-9]{4}" title="Use format XX_XXXX" required />
       </div>
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3>Product and Partner Updates</h3>
-        <p>Space for ARIANNA announcements, roadmap highlights, and partner ecosystem news.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="articles">
-    <h2>Articles</h2>
-    <div class="feature-grid" style="margin-top: 20px;">
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3>Deep-Dive Technical Articles</h3>
-        <p>Space for long-form content on vulnerability management architecture, HBOM/SBOM governance, and secure lifecycle design.</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3>Industry Use Cases</h3>
-        <p>Space for sector-focused articles covering automotive, industrial, medical, aerospace, and defense applications.</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3>Best Practice Guides</h3>
-        <p>Space for actionable guides that help teams move from reactive vulnerability handling to verified, structured control.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="faq">
-    <h2>FAQ</h2>
-    <div class="feature-grid" style="margin-top: 20px;">
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3>What does ARIANNA help us manage?</h3>
-        <p>ARIANNA helps organizations manage vulnerability identification, tracking, monitoring, remediation workflows, and reporting across software and hardware components.</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3>Can ARIANNA support compliance activities?</h3>
-        <p>Yes. ARIANNA supports compliance workflows with structured evidence, audit-ready outputs, and traceable vulnerability management aligned to industry expectations.</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3>Is ARIANNA suitable for embedded and OT environments?</h3>
-        <p>Yes. ARIANNA is designed for both IT and embedded/OT contexts, including long product lifecycles, complex supply chains, and safety-critical use cases.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta">
-    <div>
-      <h2>Want tailored guidance?</h2>
-      <p>Book a demo to see how ARIANNA supports vulnerability management and reporting in your environment.</p>
-    </div>
-    <div>
-      <a href="book-a-demo.html">Free Demo or Trial</a>
-    </div>
+      <button type="submit">Submit Support Request</button>
+    </form>
   </section>
   <footer>
+    <div>
+      <p><strong>ARIANNA</strong></p>
+      <p>Product security management for connected devices.</p>
+    </div>
+    <div>
+      <h4>Solutions</h4>
+      <p>SBOM &amp; HBOM</p>
+      <p>Vulnerability management</p>
+      <p>Vulnerability monitoring</p>
+      <p>Compliance reporting</p>
+    </div>
     <div>
       <h4><a href="company.html">Company</a></h4>
       <p><a href="company.html#about">About ARIANNA</a></p>
@@ -600,7 +569,7 @@
   </script>
   <script>
     (function () {
-      fetch("content/compliance.json")
+      fetch("content/book-a-demo.json")
         .then(function (res) { return res.json(); })
         .then(function (data) {
           Object.keys(data).forEach(function (key) {
