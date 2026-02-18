@@ -150,6 +150,13 @@
       line-height: 1.7;
       margin: 0 0 18px;
     }
+    .list {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
     .section {
       padding: 50px 8vw;
     }
@@ -396,41 +403,76 @@
     <a class="nav-cta" href="book-a-demo.html">Free Demo or Trial</a>
   </nav>
 
-  <section class="hero">
+  <section class="hero" id="about">
     <div>
-      <div class="eyebrow" data-cms-key="hero_eyebrow">Company</div>
-      <h1 data-cms-key="hero_title">Built by product security specialists.</h1>
-      <p data-cms-key="hero_body">ARIANNA blends security research, device engineering, and compliance expertise to help teams build safer connected products.</p>
-      <div class="pill-list">
-        <span class="pill" data-cms-key="pill_1">Security Research</span>
-        <span class="pill" data-cms-key="pill_2">Regulatory Expertise</span>
-        <span class="pill" data-cms-key="pill_3">Device Supply Chains</span>
-        <span class="pill" data-cms-key="pill_4">Embedded Systems</span>
-      </div>
+      <div class="eyebrow" data-cms-key="hero_eyebrow">About ARIANNA</div>
+      <h1 data-cms-key="hero_title">From Vulnerabilities to Verified Control.</h1>
+      <p data-cms-key="hero_body_1">ARIANNA was founded with a clear mission: to bring structure, clarity, and continuous control to vulnerability management in complex and safety-critical environments.</p>
+      <p data-cms-key="hero_body_2">As industries become increasingly connected, organizations face mounting regulatory pressure, long product lifecycles, and intricate supply chains. Traditional IT-centric security tools often fall short in these environments. ARIANNA was created to bridge that gap.</p>
     </div>
     <blockquote>
-      <span data-cms-key="quote_text">"Our mission is to make vulnerability management actionable for the teams building the products that power modern life."</span>
-      <div class="quote-name" data-cms-key="quote_name">ARIANNA Leadership</div>
+      <span data-cms-key="quote_text">"Security is not a one-time effort — it is an ongoing responsibility."</span>
+      <div class="quote-name" data-cms-key="quote_name">ARIANNA</div>
     </blockquote>
   </section>
 
-  <section class="section" id="careers">
-    <h2 data-cms-key="focus_title">What we focus on</h2>
+  <section class="section">
+    <h2 data-cms-key="vision_title">Our Vision</h2>
     <div class="feature-grid" style="margin-top: 20px;">
       <div class="feature-card">
         <div class="icon"></div>
-        <h3 data-cms-key="focus_1_title">Product security management</h3>
-        <p data-cms-key="focus_1_body">We design workflows that unify SBOM/HBOM management with vulnerability tracking and remediation.</p>
+        <h3 data-cms-key="vision_card_title">How We See Vulnerability Management</h3>
+        <p data-cms-key="vision_card_body">We believe vulnerability management should not be reactive, fragmented, or purely compliance-driven. It should be:</p>
+        <ul class="list">
+          <li data-cms-key="vision_1">Continuous</li>
+          <li data-cms-key="vision_2">Lifecycle-oriented</li>
+          <li data-cms-key="vision_3">Structured and traceable</li>
+          <li data-cms-key="vision_4">Designed for both IT and embedded/OT environments</li>
+        </ul>
+        <p data-cms-key="vision_card_body_2" style="margin-top: 14px;">Our vision is to enable organizations to manage cybersecurity risks systematically, from development through deployment and long-term operation.</p>
       </div>
       <div class="feature-card">
         <div class="icon"></div>
-        <h3 data-cms-key="focus_2_title">Expert guidance</h3>
-        <p data-cms-key="focus_2_body">Our team helps translate regulatory requirements into practical, repeatable processes.</p>
+        <h3 data-cms-key="what_title">What We Do</h3>
+        <p data-cms-key="what_body">ARIANNA provides a structured platform for vulnerability identification, tracking, monitoring, and reporting. We help organizations:</p>
+        <ul class="list">
+          <li data-cms-key="what_1">Gain visibility into software and component risks</li>
+          <li data-cms-key="what_2">Monitor vulnerabilities across complex supply chains</li>
+          <li data-cms-key="what_3">Support secure development and DevSecOps processes</li>
+          <li data-cms-key="what_4">Maintain compliance with industry regulations and standards</li>
+          <li data-cms-key="what_5">Produce audit-ready documentation with confidence</li>
+        </ul>
+        <p data-cms-key="what_body_2" style="margin-top: 14px;">Our approach combines technical depth with operational practicality, enabling teams to integrate vulnerability management seamlessly into existing workflows.</p>
       </div>
       <div class="feature-card">
         <div class="icon"></div>
-        <h3 data-cms-key="focus_3_title">Global compliance coverage</h3>
-        <p data-cms-key="focus_3_body">Stay ahead of fast-moving cybersecurity regulations across medical, industrial, automotive, and IoT sectors.</p>
+        <h3 data-cms-key="industries_title">Built for Critical Industries</h3>
+        <p data-cms-key="industries_body">ARIANNA is designed for industries where reliability, safety, and compliance are non-negotiable — including automotive, industrial automation, medical devices, aerospace, defense, and other connected systems.</p>
+        <p data-cms-key="industries_body_2">We understand the challenges of long product lifecycles, certification constraints, and embedded environments. Our solutions are tailored to meet those realities.</p>
+        <h3 data-cms-key="commitment_title">Our Commitment</h3>
+        <p data-cms-key="commitment_body">At ARIANNA, we are committed to continuous innovation, transparent processes, regulatory alignment, and supporting our customers as long-term partners.</p>
+        <p data-cms-key="commitment_body_2">We work alongside organizations to ensure vulnerabilities are not just detected, but managed in a controlled, documented, and sustainable way.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="careers">
+    <h2 data-cms-key="careers_title">Careers</h2>
+    <div class="feature-grid" style="margin-top: 20px;">
+      <div class="feature-card">
+        <div class="icon"></div>
+        <h3 data-cms-key="careers_why_title">Why Join ARIANNA</h3>
+        <p data-cms-key="careers_why_body">Work on meaningful cybersecurity challenges in industries where safety, reliability, and compliance are critical. You will help shape practical solutions used by engineering and security teams worldwide.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon"></div>
+        <h3 data-cms-key="careers_who_title">Who We Look For</h3>
+        <p data-cms-key="careers_who_body">We welcome professionals with experience in product security, vulnerability management, embedded systems, compliance, and secure software development.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon"></div>
+        <h3 data-cms-key="careers_contact_title">Get in Touch</h3>
+        <p data-cms-key="careers_contact_body">Interested in joining ARIANNA? Reach out to us at <a href="mailto:hello@ariannateam.ai">hello@ariannateam.ai</a> and share your profile.</p>
       </div>
     </div>
   </section>
@@ -447,8 +489,8 @@
   <footer>
     <div>
       <h4><a href="company.html">Company</a></h4>
-      <p>About ARIANNA</p>
-      <p>Careers</p>
+      <p><a href="company.html#about">About ARIANNA</a></p>
+      <p><a href="company.html#careers">Careers</a></p>
       <p>Resources</p>
     </div>
     <div class="footer-contact">
