@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ARIANNA | Compliance</title>
+  <title>ARIANNA | Contact</title>
   <style>
     :root {
       --ink: #0f1e2b;
@@ -118,11 +118,7 @@
     .logo svg { height: 88px; width: auto; display: block; }
 
     .hero {
-      padding: 70px 8vw 40px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 36px;
-      align-items: center;
+      padding: 70px 8vw 20px;
     }
     .eyebrow {
       font-size: 12px;
@@ -138,103 +134,60 @@
       line-height: 1.1;
       margin: 18px 0 16px;
     }
-    h2 {
-      font-family: "Merriweather", "Iowan Old Style", "Times New Roman", serif;
-      font-size: clamp(24px, 3vw, 36px);
-      margin: 0 0 10px;
-    }
-    h3 { margin: 14px 0 8px; font-size: 18px; }
     p {
       font-size: 16px;
       color: var(--muted);
       line-height: 1.7;
       margin: 0 0 18px;
     }
-    .section {
-      padding: 50px 8vw;
-    }
-    .feature-grid {
+    .split {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 46%);
+      gap: 32px;
+      align-items: start;
+      padding: 70px 8vw 70px;
     }
-    .feature-card {
-      background: var(--card);
-      border-radius: 20px;
-      padding: 22px;
-      border: 1px solid var(--line);
-      box-shadow: 0 20px 40px rgba(15, 30, 43, 0.08);
+    .split-content {
+      max-width: 760px;
     }
-    .icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    }
-    .list {
-      margin: 10px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 14px;
-    }
-    .cta {
-      background: #0b1823;
+    .form-card {
+      background: var(--ink);
       color: white;
-      padding: 50px 8vw;
+      border-radius: 24px;
+      padding: 32px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-      align-items: center;
+      gap: 16px;
+      box-shadow: var(--shadow);
     }
-    .cta p { color: rgba(255, 255, 255, 0.7); }
-    .cta a {
-      display: inline-block;
-      padding: 12px 20px;
+    .form-card label {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .form-card input,
+    .form-card textarea,
+    .form-card select {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: none;
+      margin-top: 6px;
+      font-family: inherit;
+    }
+    .form-card button {
+      padding: 12px;
       border-radius: 999px;
-      background: var(--accent);
-      color: var(--ink);
+      border: none;
       font-weight: 600;
-      font-size: 14px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-    .cta a:hover {
       background: #f28a1a;
       color: #ffffff;
-      box-shadow: 0 12px 24px rgba(15, 30, 43, 0.18);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .form-card button:hover {
+      background: #3fbab7;
+      box-shadow: 0 12px 24px rgba(15, 30, 43, 0.25);
       transform: translateY(-1px);
-    }
-    footer {
-      padding: 0 8vw 60px;
-      margin-top: -160px;
-      background: #0b1823;
-      color: rgba(255, 255, 255, 0.7);
-      display: flex;
-      gap: 48px;
-      justify-content: flex-end;
-      align-items: flex-start;
-    }
-    footer h4 {
-      color: white;
-      margin: 0 0 10px;
-    }
-    footer p {
-      margin: 0 0 8px;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 14px;
-      line-height: 1.5;
-    }
-    footer a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    footer a:hover {
-      color: var(--accent);
-    }
-    .footer-contact {
-      justify-self: end;
-      align-self: start;
     }
     .newsletter-overlay {
       position: fixed;
@@ -291,6 +244,37 @@
       box-shadow: 0 12px 24px rgba(15, 30, 43, 0.18);
       transform: translateY(-1px);
     }
+    footer {
+      padding: 40px 8vw 60px;
+      background: #0b1823;
+      color: rgba(255, 255, 255, 0.7);
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      align-items: start;
+    }
+    footer h4 {
+      color: white;
+      margin: 0 0 10px;
+    }
+    footer p {
+      margin: 0 0 8px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    footer a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    footer a:hover {
+      color: var(--accent);
+    }
+    .footer-contact {
+      justify-self: end;
+      align-self: start;
+    }
     .newsletter-close {
       position: absolute;
       top: 12px;
@@ -323,6 +307,10 @@
       }
       .nav-cta {
         margin-left: auto;
+      }
+      .split {
+        grid-template-columns: 1fr;
+        padding-top: 30px;
       }
     }
   </style>
@@ -378,118 +366,60 @@
     <a class="nav-cta" href="book-a-demo.html">Free Demo or Trial</a>
   </nav>
 
-  <section class="hero">
-    <div>
-      <div class="eyebrow" data-cms-key="hero_eyebrow">Compliance</div>
-      <h1 data-cms-key="hero_title">Compliance reporting without the scramble.</h1>
-      <p data-cms-key="hero_body_1">Generate audit-ready artifacts across SBOM, HBOM, and VEX while keeping vulnerability management in one place.</p>
-      <p data-cms-key="hero_body_2">ARIANNA supports device teams as regulations evolve — from EU CRA to sector-specific requirements.</p>
+  <section class="split" id="contact">
+    <div class="split-content">
+    <div class="eyebrow">Contact</div>
+    <h1>Get in touch with ARIANNA</h1>
+    <p>Have questions about vulnerability management, compliance, partnerships, or implementation? Our team is ready to help.</p>
+    <p>Share your context and priorities, and we will respond with the right next steps.</p>
+      <h2>Send us a message</h2>
+      <p>Use the form to contact ARIANNA and we will get back to you as soon as possible.</p>
     </div>
-    <div class="feature-card">
-      <div class="icon"></div>
-      <h3 data-cms-key="hero_card_title">Evidence on demand</h3>
-      <p data-cms-key="hero_card_body">Compile compliance documentation in minutes, not weeks.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2 data-cms-key="capabilities_title">Key compliance capabilities</h2>
-    <div class="feature-grid" style="margin-top: 20px;">
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3 data-cms-key="cap_1_title">SBOM, HBOM, and VEX exports</h3>
-        <p data-cms-key="cap_1_body">Deliver SPDX, CycloneDX, VEX, and CSV artifacts tailored for regulators, customers, and auditors.</p>
+    <form class="form-card">
+      <div>
+        <label>First name</label>
+        <input type="text" placeholder="Alex" />
       </div>
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3 data-cms-key="cap_2_title">Policy-driven SLAs</h3>
-        <p data-cms-key="cap_2_body">Map internal policies to ISO, IEC, FDA, and CRA expectations with automated SLA tracking.</p>
+      <div>
+        <label>Last name</label>
+        <input type="text" placeholder="Johnson" />
       </div>
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3 data-cms-key="cap_3_title">Regulatory reporting</h3>
-        <p data-cms-key="cap_3_body">Maintain a living compliance record for RED, NIS2, and sector-specific cybersecurity programs.</p>
+      <div>
+          <label>Business email</label>
+          <input type="email" placeholder="alex@company.com" />
+        </div>
+        <div>
+          <label>Topic</label>
+          <select>
+            <option>General inquiry</option>
+            <option>Product demo</option>
+            <option>Partnership</option>
+            <option>Support</option>
+          </select>
+        </div>
+      <div>
+        <label>Message</label>
+        <textarea rows="4" placeholder="Tell us how we can help."></textarea>
       </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2 data-cms-key="standards_title">Standards and regulations supported</h2>
-    <div class="feature-grid" style="margin-top: 20px;">
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3 data-cms-key="std_auto_title">Automotive</h3>
-        <ul class="list">
-          <li data-cms-key="std_auto_1">ISO/SAE 21434 - Automotive Cybersecurity Standard</li>
-          <li data-cms-key="std_auto_2">UNECE WP.29 / R155 &amp; R156 - Cybersecurity and Software Updates Regulations</li>
-        </ul>
+      <div>
+        <label>Phone</label>
+        <input type="tel" placeholder="+1 (000) 000-0000" />
       </div>
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3 data-cms-key="std_industrial_title">Industrial Automation</h3>
-        <ul class="list">
-          <li data-cms-key="std_industrial_1">IEC 62443 Series - Industrial Automation and Control Systems Security</li>
-          <li data-cms-key="std_industrial_2">ISA/IEC 62443-4-1 - Secure Product Development Lifecycle</li>
-        </ul>
-      </div>
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3 data-cms-key="std_medical_title">Medical Devices</h3>
-        <ul class="list">
-          <li data-cms-key="std_medical_1">FDA Pre-Market Submissions (510(k), PMA) - Cybersecurity Documentation</li>
-          <li data-cms-key="std_medical_2">EU MDR - Medical Device Regulation with cybersecurity expectations</li>
-          <li data-cms-key="std_medical_3">IEC TR 60601-4-5 - Security Requirements for Medical Electrical Equipment</li>
-        </ul>
-      </div>
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3 data-cms-key="std_iot_title">Consumer Electronics &amp; IoT</h3>
-        <ul class="list">
-          <li data-cms-key="std_iot_0">ETSI EN 303 645 - Consumer IoT Security Baseline Requirements</li>
-          <li id="red" data-cms-key="std_iot_1">RED (Radio Equipment Directive)</li>
-          <li id="cra" data-cms-key="std_iot_2">CRA (Cyber Resilience Act)</li>
-        </ul>
-      </div>
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3 data-cms-key="std_defense_title">Defense &amp; Aerospace</h3>
-        <ul class="list">
-          <li data-cms-key="std_defense_1">NIST SP 800-53 / RMF - Security and Privacy Controls for Federal Information Systems and Organizations</li>
-          <li data-cms-key="std_defense_2">NIST SP 800-161 - Cybersecurity Supply Chain Risk Management Practices</li>
-          <li data-cms-key="std_defense_3">DO-326A / ED-202A - Airworthiness Security Process Specification</li>
-        </ul>
-      </div>
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3 data-cms-key="std_energy_title">Energy &amp; Utilities</h3>
-        <ul class="list">
-          <li data-cms-key="std_energy_1">NERC CIP Standards - Critical Infrastructure Protection for Bulk Electric Systems</li>
-          <li data-cms-key="std_energy_2">IEC 62443 Series - Security for Industrial Automation and Control Systems</li>
-          <li data-cms-key="std_energy_3">NIST Cybersecurity Framework (CSF) - Risk-Based Cybersecurity Management</li>
-        </ul>
-      </div>
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3 data-cms-key="std_transport_title">Transportation &amp; Logistics</h3>
-        <ul class="list">
-          <li data-cms-key="std_transport_1">ISO/SAE 21434 - Road Vehicle Cybersecurity Engineering</li>
-          <li data-cms-key="std_transport_2">IEC 62443 Series - Security for Industrial and Transport Control Environments</li>
-          <li data-cms-key="std_transport_3">NIST Cybersecurity Framework (CSF) - Cyber Risk Governance and Improvement</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta">
-    <div>
-      <h2 data-cms-key="cta_title">Get audit-ready faster</h2>
-      <p data-cms-key="cta_body">Book a tailored demo to explore compliance workflows for your products.</p>
-    </div>
-    <div>
-      <a href="book-a-demo.html">Free Demo or Trial</a>
-    </div>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
   <footer>
+    <div>
+      <p><strong>ARIANNA</strong></p>
+      <p>Product security management for connected devices.</p>
+    </div>
+    <div>
+      <h4>Solutions</h4>
+      <p>SBOM &amp; HBOM</p>
+      <p>Vulnerability management</p>
+      <p>Vulnerability monitoring</p>
+      <p>Compliance reporting</p>
+    </div>
     <div>
       <h4><a href="company.html">Company</a></h4>
       <p><a href="company.html#about">About ARIANNA</a></p>
@@ -602,7 +532,7 @@
   </script>
   <script>
     (function () {
-      fetch("content/compliance.json")
+      fetch("content/book-a-demo.json")
         .then(function (res) { return res.json(); })
         .then(function (data) {
           Object.keys(data).forEach(function (key) {
