@@ -142,10 +142,13 @@
     }
     .split {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 46%);
       gap: 32px;
       align-items: start;
-      padding: 30px 8vw 70px;
+      padding: 70px 8vw 70px;
+    }
+    .split-content {
+      max-width: 760px;
     }
     .form-card {
       background: var(--ink);
@@ -274,6 +277,10 @@
       .nav-cta {
         margin-left: auto;
       }
+      .split {
+        grid-template-columns: 1fr;
+        padding-top: 30px;
+      }
     }
   </style>
 </head>
@@ -339,7 +346,8 @@
     <a class="nav-cta" href="book-a-demo.html">Free Demo or Trial</a>
   </nav>
 
-  <section class="hero">
+  <section class="split">
+    <div class="split-content">
     <div class="eyebrow">Schedule a demo or trial</div>
     <h1 data-cms-key="hero_title">Want to see the ARIANNA Product Security Management Platform in action?</h1>
     <h2 data-cms-key="demo_title">Free demo</h2>
@@ -347,11 +355,7 @@
     <p data-cms-key="demo_body_2">Share your device stack, compliance requirements, and timeline — we will tailor the walkthrough.</p>
     <p data-cms-key="demo_body_3">Discover how device manufacturers ensure the cybersecurity and compliance of their embedded products during all stages of the product lifecycle.</p>
     <h2 data-cms-key="trial_title">Free trial</h2>
-    <p data-cms-key="trial_body">Why not make your hands dirty and try our platform yourself? If you like it you can keep using it for free.</p>
-  </section>
-
-  <section class="split">
-    <div>
+    <p data-cms-key="trial_body">Request a trial to evaluate the platform in your own environment and determine how it supports your security and compliance goals.</p>
       <h2 data-cms-key="form_title">Schedule a demo or trial</h2>
       <p data-cms-key="form_body">Feel free to fill in the form and we will arrange the free demo or free trial for you so you can experience the ease of use of the ARIANNA vulnerability management platform.</p>
     </div>
