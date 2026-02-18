@@ -182,6 +182,9 @@
       border: 1px solid var(--line);
       box-shadow: 0 20px 40px rgba(15, 30, 43, 0.08);
     }
+    .card[id] {
+      scroll-margin-top: 96px;
+    }
     .icon {
       width: 44px;
       height: 44px;
@@ -362,11 +365,13 @@
       <div class="nav-dropdown">
         <a class="nav-dropdown-toggle" href="industries.html">Industries <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>
         <div class="nav-dropdown-menu">
-          <a href="#iot">IOT</a>
-          <a href="#industrial">Industrial</a>
-          <a href="#medical">Medical</a>
-          <a href="#consumer">Consumer</a>
           <a href="#automotive">Automotive</a>
+          <a href="#industrial">Industrial Automation</a>
+          <a href="#medical">Medical Devices</a>
+          <a href="#consumer">Consumer Electronics &amp; IoT</a>
+          <a href="#defense-aerospace">Defense &amp; Aerospace</a>
+          <a href="#energy-utilities">Energy &amp; Utilities</a>
+          <a href="#transportation-logistics">Transportation &amp; Logistics</a>
         </div>
       </div>
       <div class="nav-dropdown">
@@ -477,6 +482,60 @@
           <li data-cms-key="iot_std_1">ETSI EN 303 645 – Consumer IoT Security Baseline Requirements</li>
           <li data-cms-key="iot_std_2">RED (Radio Equipment Directive) – Cybersecurity Requirements</li>
           <li data-cms-key="iot_std_3">CRA (Cyber Resilience Act) – EU Cybersecurity Regulation for Hardware/Software Products</li>
+        </ul>
+      </div>
+
+      <div class="card" id="defense-aerospace">
+        <div class="icon"></div>
+        <h2 data-cms-key="defense_title">Defense &amp; Aerospace</h2>
+        <p data-cms-key="defense_body">Defense and aerospace systems require strict supply chain control, long lifecycle maintenance, and vulnerability traceability across software and hardware components. ARIANNA helps teams maintain trusted inventories and continuously assess risk for mission-critical products.</p>
+        <h3>How ARIANNA is Used</h3>
+        <ul class="list">
+          <li data-cms-key="defense_use_1">Maintains end-to-end SBOM and HBOM visibility across embedded avionics, control systems, and support platforms.</li>
+          <li data-cms-key="defense_use_2">Prioritizes vulnerabilities using exploit intelligence and operational criticality to support risk-based remediation.</li>
+          <li data-cms-key="defense_use_3">Provides auditable reporting workflows for supplier assurance, authority reviews, and ongoing security governance.</li>
+        </ul>
+        <h3>Relevant Certifications &amp; Standards</h3>
+        <ul class="list">
+          <li data-cms-key="defense_std_1">NIST SP 800-53 / RMF – Security and Privacy Controls for Federal Information Systems and Organizations</li>
+          <li data-cms-key="defense_std_2">NIST SP 800-161 – Cybersecurity Supply Chain Risk Management Practices</li>
+          <li data-cms-key="defense_std_3">DO-326A / ED-202A – Airworthiness Security Process Specification</li>
+        </ul>
+      </div>
+
+      <div class="card" id="energy-utilities">
+        <div class="icon"></div>
+        <h2 data-cms-key="energy_title">Energy &amp; Utilities</h2>
+        <p data-cms-key="energy_body">Energy generation, transmission, and utility infrastructure depend on resilient operational technology and connected control systems. ARIANNA helps operators and suppliers maintain component transparency and continuously manage vulnerabilities across critical assets.</p>
+        <h3>How ARIANNA is Used</h3>
+        <ul class="list">
+          <li data-cms-key="energy_use_1">Builds and maintains SBOM/HBOM inventories for grid control, monitoring, and field equipment ecosystems.</li>
+          <li data-cms-key="energy_use_2">Tracks vulnerabilities and prioritizes remediation based on exploitability and operational impact.</li>
+          <li data-cms-key="energy_use_3">Supports compliance evidence generation for security audits, supplier assurance, and regulatory reporting.</li>
+        </ul>
+        <h3>Relevant Certifications &amp; Standards</h3>
+        <ul class="list">
+          <li data-cms-key="energy_std_1">NERC CIP Standards – Critical Infrastructure Protection for Bulk Electric Systems</li>
+          <li data-cms-key="energy_std_2">IEC 62443 Series – Security for Industrial Automation and Control Systems</li>
+          <li data-cms-key="energy_std_3">NIST Cybersecurity Framework (CSF) – Risk-Based Cybersecurity Management</li>
+        </ul>
+      </div>
+
+      <div class="card" id="transportation-logistics">
+        <div class="icon"></div>
+        <h2 data-cms-key="transport_title">Transportation &amp; Logistics</h2>
+        <p data-cms-key="transport_body">Transportation and logistics platforms rely on connected vehicles, fleet systems, and digital infrastructure that must stay secure and available. ARIANNA enables operators and suppliers to manage software and hardware exposure across distributed transport environments.</p>
+        <h3>How ARIANNA is Used</h3>
+        <ul class="list">
+          <li data-cms-key="transport_use_1">Maintains current SBOM and HBOM visibility for fleet devices, telematics units, and logistics control platforms.</li>
+          <li data-cms-key="transport_use_2">Prioritizes vulnerabilities based on exploit intelligence, business criticality, and operational continuity impact.</li>
+          <li data-cms-key="transport_use_3">Delivers structured reporting for supplier risk management, customer assurance, and regulatory readiness.</li>
+        </ul>
+        <h3>Relevant Certifications &amp; Standards</h3>
+        <ul class="list">
+          <li data-cms-key="transport_std_1">ISO/SAE 21434 – Road Vehicle Cybersecurity Engineering</li>
+          <li data-cms-key="transport_std_2">IEC 62443 Series – Security for Industrial and Transport Control Environments</li>
+          <li data-cms-key="transport_std_3">NIST Cybersecurity Framework (CSF) – Cyber Risk Governance and Improvement</li>
         </ul>
       </div>
 
