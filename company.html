@@ -226,6 +226,32 @@
       box-shadow: 0 12px 24px rgba(15, 30, 43, 0.18);
       transform: translateY(-1px);
     }
+    footer {
+      padding: 0 8vw 60px;
+      background: #0b1823;
+      color: rgba(255, 255, 255, 0.7);
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+    footer h4 {
+      color: white;
+      margin: 0 0 10px;
+    }
+    footer p {
+      margin: 0 0 8px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    footer a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .footer-contact {
+      justify-self: end;
+      align-self: start;
+    }
     .newsletter-overlay {
       position: fixed;
       inset: 0;
@@ -429,6 +455,13 @@
       <a href="book-a-demo.html">Free Demo or Trial</a>
     </div>
   </section>
+  <footer>
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p><a href="mailto:hello@ariannateam.ai">hello@ariannateam.ai</a></p>
+      <p><a href="tel:+393313482583">+39 331 3482583</a></p>
+    </div>
+  </footer>
   <div class="newsletter-overlay" id="newsletterOverlay" aria-hidden="true">
     <div class="newsletter-modal" role="dialog" aria-modal="true" aria-labelledby="newsletterTitle">
       <button class="newsletter-close" type="button" aria-label="Close">×</button>
