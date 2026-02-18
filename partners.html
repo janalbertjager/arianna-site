@@ -219,6 +219,33 @@
       background: #ffffff;
       box-shadow: 0 18px 40px rgba(15, 30, 43, 0.08);
     }
+    .logo-row {
+      padding: 20px 8vw 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .logos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 24px;
+      padding: 0 8vw 40px;
+    }
+    .logo-pill {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 12px 18px;
+      text-align: center;
+      font-size: 12px;
+      color: #7b8b98;
+    }
+    .logo-pill img {
+      max-height: 34px;
+      max-width: 100%;
+      width: auto;
+      display: inline-block;
+      vertical-align: middle;
+    }
     .cta {
       background: #0b1823;
       color: white;
@@ -490,6 +517,20 @@
       <p>Contact us to explore partnership opportunities and help shape the future of secure product development.</p>
     </div>
   </section>
+
+  <div class="logo-row">Partner organisations that work with ARIANNA</div>
+  <div class="logos">
+    <div class="logo-pill">
+      <a href="https://www.securitypattern.com/" target="_blank" rel="noopener noreferrer">
+        <img src="https://static.wixstatic.com/media/7f112e_35b9131546a74fb48ef8add5830f91ea~mv2.png" alt="Security Pattern logo" />
+      </a>
+    </div>
+    <div class="logo-pill">Partner Logo</div>
+    <div class="logo-pill">Partner Logo</div>
+    <div class="logo-pill">Partner Logo</div>
+    <div class="logo-pill">Partner Logo</div>
+    <div class="logo-pill">Partner Logo</div>
+  </div>
 
   <section class="split" id="contact">
     <div>
