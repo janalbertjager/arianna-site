@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ARIANNA | Company</title>
+  <title>ARIANNA | Partners</title>
   <style>
     :root {
       --ink: #0f1e2b;
@@ -200,6 +200,25 @@
       font-weight: 600;
       color: var(--ink);
     }
+    .partner-intro {
+      max-width: 900px;
+    }
+    .partner-list {
+      margin: 0 0 18px 20px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .partner-list li {
+      margin-bottom: 8px;
+    }
+    .partner-callout {
+      margin-top: 26px;
+      padding: 24px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      box-shadow: 0 18px 40px rgba(15, 30, 43, 0.08);
+    }
     .cta {
       background: #0b1823;
       color: white;
@@ -223,6 +242,50 @@
     .cta a:hover {
       background: #159294;
       box-shadow: 0 12px 24px rgba(15, 30, 43, 0.18);
+      transform: translateY(-1px);
+    }
+    .split {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      align-items: start;
+      padding: 30px 8vw 70px;
+    }
+    .form-card {
+      background: var(--ink);
+      color: white;
+      border-radius: 24px;
+      padding: 32px;
+      display: grid;
+      gap: 16px;
+      box-shadow: var(--shadow);
+    }
+    .form-card label {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .form-card input,
+    .form-card textarea,
+    .form-card select {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: none;
+      margin-top: 6px;
+      font-family: inherit;
+    }
+    .form-card button {
+      border: none;
+      font-weight: 600;
+      background: #f28a1a;
+      color: #ffffff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .form-card button:hover {
+      background: #3fbab7;
+      box-shadow: 0 12px 24px rgba(15, 30, 43, 0.25);
       transform: translateY(-1px);
     }
     .newsletter-overlay {
@@ -369,8 +432,8 @@
       <div class="nav-dropdown">
         <a class="nav-dropdown-toggle" href="company.html">Company <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>
         <div class="nav-dropdown-menu">
-          <a href="#careers">Careers</a>
-          <a href="#contact">Contact</a>
+          <a href="company.html#careers">Careers</a>
+          <a href="company.html#contact">Contact</a>
         </div>
       </div>
       <a href="partners.html">Partners</a>
@@ -378,53 +441,89 @@
     <a class="nav-cta" href="book-a-demo.html">Free Demo or Trial</a>
   </nav>
 
-  <section class="hero">
-    <div>
-      <div class="eyebrow" data-cms-key="hero_eyebrow">Company</div>
-      <h1 data-cms-key="hero_title">Built by product security specialists.</h1>
-      <p data-cms-key="hero_body">ARIANNA blends security research, device engineering, and compliance expertise to help teams build safer connected products.</p>
-      <div class="pill-list">
-        <span class="pill" data-cms-key="pill_1">Security Research</span>
-        <span class="pill" data-cms-key="pill_2">Regulatory Expertise</span>
-        <span class="pill" data-cms-key="pill_3">Device Supply Chains</span>
-        <span class="pill" data-cms-key="pill_4">Embedded Systems</span>
+  <section class="section" id="partners">
+    <h2>Our Partners</h2>
+    <p class="partner-intro">At ARIANNA, we work with trusted partners who help organisations strengthen their vulnerability management capabilities and successfully implement our platform. Our partner ecosystem ensures that customers not only deploy ARIANNA effectively, but also build sustainable, mature security processes around it.</p>
+    <div class="feature-grid" style="margin-top: 24px;">
+      <div class="feature-card">
+        <div class="icon"></div>
+        <h3>Implementation Partners</h3>
+        <p>Our implementation partners are experienced security consultancies specialising in vulnerability management, product security, and regulatory compliance.</p>
+        <p>They support organisations with:</p>
+        <ul class="partner-list">
+          <li>Designing and optimising vulnerability management processes</li>
+          <li>Integrating ARIANNA into existing development and security workflows</li>
+          <li>Regulatory readiness and compliance advisory</li>
+          <li>HBOM and SBOM governance</li>
+          <li>Security programme maturity assessments</li>
+        </ul>
+        <p>These partners combine deep domain expertise with hands-on implementation experience, ensuring that ARIANNA becomes a natural part of your security lifecycle.</p>
+        <p>Whether you are establishing a new vulnerability management capability or scaling across multiple product lines, our implementation partners provide the expertise needed to accelerate results and reduce risk.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon"></div>
+        <h3>Reseller Partners</h3>
+        <p>Our reseller partners make ARIANNA accessible to organisations across different regions and industries.</p>
+        <p>They provide:</p>
+        <ul class="partner-list">
+          <li>Local sales and onboarding support</li>
+          <li>Product demonstrations and technical guidance</li>
+          <li>Licensing advisory</li>
+          <li>First-line customer support</li>
+        </ul>
+        <p>By working closely with ARIANNA, our resellers ensure customers receive reliable service and clear guidance throughout their journey.</p>
       </div>
     </div>
-    <blockquote>
-      <span data-cms-key="quote_text">"Our mission is to make vulnerability management actionable for the teams building the products that power modern life."</span>
-      <div class="quote-name" data-cms-key="quote_name">ARIANNA Leadership</div>
-    </blockquote>
+    <div class="partner-callout">
+      <h3>Why Work with an ARIANNA Partner?</h3>
+      <p>Partnering with one of our certified organisations means:</p>
+      <ul class="partner-list">
+        <li>Faster implementation</li>
+        <li>Reduced operational risk</li>
+        <li>Expert vulnerability management guidance</li>
+        <li>Alignment with industry best practices</li>
+        <li>Long-term security maturity growth</li>
+      </ul>
+      <p>Together with our partners, we help organisations transform vulnerability management from a reactive activity into a structured, proactive security discipline.</p>
+      <h3>Become a Partner</h3>
+      <p>If your organisation provides vulnerability management consultancy services or operates as a security solutions reseller, we invite you to join the ARIANNA partner ecosystem.</p>
+      <p>Contact us to explore partnership opportunities and help shape the future of secure product development.</p>
+    </div>
   </section>
 
-  <section class="section" id="careers">
-    <h2 data-cms-key="focus_title">What we focus on</h2>
-    <div class="feature-grid" style="margin-top: 20px;">
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3 data-cms-key="focus_1_title">Product security management</h3>
-        <p data-cms-key="focus_1_body">We design workflows that unify SBOM/HBOM management with vulnerability tracking and remediation.</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3 data-cms-key="focus_2_title">Expert guidance</h3>
-        <p data-cms-key="focus_2_body">Our team helps translate regulatory requirements into practical, repeatable processes.</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon"></div>
-        <h3 data-cms-key="focus_3_title">Global compliance coverage</h3>
-        <p data-cms-key="focus_3_body">Stay ahead of fast-moving cybersecurity regulations across medical, industrial, automotive, and IoT sectors.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta" id="contact">
+  <section class="split" id="contact">
     <div>
-      <h2 data-cms-key="cta_title">Meet ARIANNA in action</h2>
-      <p data-cms-key="cta_body">Book a tailored demo to explore how our team can support your security program.</p>
+      <h2>Become an ARIANNA Partner</h2>
+      <p>Tell us about your organisation and partnership model. Our team will follow up to discuss next steps and onboarding.</p>
+      <p>We are looking for implementation consultancies and reseller organisations with strong product security and vulnerability management expertise.</p>
     </div>
-    <div>
-      <a href="book-a-demo.html">Free Demo or Trial</a>
-    </div>
+    <form class="form-card">
+      <div>
+        <label>Company name</label>
+        <input type="text" placeholder="Your company" />
+      </div>
+      <div>
+        <label>Contact name</label>
+        <input type="text" placeholder="Full name" />
+      </div>
+      <div>
+        <label>Business email</label>
+        <input type="email" placeholder="name@company.com" />
+      </div>
+      <div>
+        <label>Partnership type</label>
+        <select>
+          <option>Implementation Partner</option>
+          <option>Reseller Partner</option>
+          <option>Both</option>
+        </select>
+      </div>
+      <div>
+        <label>Message</label>
+        <textarea rows="4" placeholder="Describe your services, regions, and why you want to partner with ARIANNA."></textarea>
+      </div>
+      <button type="submit">Submit partner request</button>
+    </form>
   </section>
   <div class="newsletter-overlay" id="newsletterOverlay" aria-hidden="true">
     <div class="newsletter-modal" role="dialog" aria-modal="true" aria-labelledby="newsletterTitle">
@@ -515,19 +614,6 @@
       window.addEventListener("resize", function () {
         if (!isMobileNav()) closeAll();
       });
-    })();
-  </script>
-  <script>
-    (function () {
-      fetch("content/company.json")
-        .then(function (res) { return res.json(); })
-        .then(function (data) {
-          Object.keys(data).forEach(function (key) {
-            var el = document.querySelector('[data-cms-key="' + key + '"]');
-            if (el) el.textContent = data[key];
-          });
-        })
-        .catch(function () {});
     })();
   </script>
 </body>
