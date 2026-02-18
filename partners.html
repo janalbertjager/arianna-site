@@ -480,20 +480,7 @@
           <a href="industries.html#transportation-logistics">Transportation &amp; Logistics</a>
         </div>
       </div>
-      <div class="nav-dropdown">
-        <a class="nav-dropdown-toggle" href="compliance.html">Compliance <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>
-        <div class="nav-dropdown-menu">
-          <a href="compliance.html#cra">CRA</a>
-          <a href="compliance.html#red">RED</a>
-        </div>
-      </div>
-      <div class="nav-dropdown">
-        <a class="nav-dropdown-toggle" href="company.html">Company <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>
-        <div class="nav-dropdown-menu">
-          <a href="company.html#careers">Careers</a>
-          <a href="company.html#contact">Contact</a>
-        </div>
-      </div>
+      <a href="compliance.html">Compliance</a>
       <a href="partners.html">Partners</a>
     </div>
     <a class="nav-cta" href="book-a-demo.html">Free Demo or Trial</a>
@@ -609,7 +596,7 @@
   </section>
   <footer>
     <div>
-      <h4>Company</h4>
+      <h4><a href="company.html">Company</a></h4>
       <p>About ARIANNA</p>
       <p>Careers</p>
       <p>Resources</p>
@@ -647,9 +634,10 @@
         overlay.setAttribute("aria-hidden", "true");
       }
       var subscribed = window.localStorage.getItem("arianna_newsletter_subscribed") === "true";
+      var dismissed = window.localStorage.getItem("arianna_newsletter_dismissed") === "true";
       var lastShown = Number(window.localStorage.getItem("arianna_newsletter_shown_at") || 0);
       var now = Date.now();
-      if (!subscribed && (!lastShown || now - lastShown >= 60000)) {
+      if (!subscribed && !dismissed && (!lastShown || now - lastShown >= 60000)) {
         setTimeout(function () {
           openOverlay();
           window.localStorage.setItem("arianna_newsletter_shown_at", String(Date.now()));
@@ -662,9 +650,15 @@
           closeOverlay();
         });
       }
-      if (closeButton) closeButton.addEventListener("click", closeOverlay);
+      if (closeButton) closeButton.addEventListener("click", function () {
+        window.localStorage.setItem("arianna_newsletter_dismissed", "true");
+        closeOverlay();
+      });
       if (overlay) overlay.addEventListener("click", function (event) {
-        if (event.target === overlay) closeOverlay();
+        if (event.target === overlay) {
+          window.localStorage.setItem("arianna_newsletter_dismissed", "true");
+          closeOverlay();
+        }
       });
     })();
   </script>
