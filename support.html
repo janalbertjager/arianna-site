@@ -45,8 +45,10 @@
     .nav-links a {
       transition: color 0.2s ease;
     }
-    .nav-links a:hover {
-      color: var(--ink);
+    .nav-links a:hover,
+    .nav-links a:focus-visible,
+    .nav-links a:active {
+      color: #3fbab7;
     }
     .nav-dropdown {
       position: relative;
