@@ -516,6 +516,21 @@
       cursor: pointer;
       color: var(--muted);
     }
+      @media (max-width: 720px) {
+      footer {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: start;
+        gap: 16px;
+        padding: 32px 8vw 40px;
+      }
+      .footer-company,
+      .footer-contact {
+        grid-column: auto;
+        justify-self: start;
+        align-self: start;
+      }
+    }
   </style>
   <link rel="stylesheet" href="chatbot.css" />
 </head>
