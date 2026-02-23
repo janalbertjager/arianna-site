@@ -178,6 +178,12 @@
       line-height: 1.6;
       font-size: 14px;
     }
+    .list li p {
+      margin: 6px 0 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
     .cta {
       background: #0b1823;
       color: white;
@@ -382,8 +388,25 @@
           <a href="resources.html#faq">FAQ</a>
         </div>
       </div>
-      <a href="compliance.html">Compliance</a>
-      <a href="partners.html">Partners</a>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="compliance.html">Compliance <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="compliance.html">Overview</a>
+          <a href="compliance.html#capabilities">Capabilities</a>
+          <a href="compliance.html#standards">Standards</a>
+          <a href="compliance.html#cra">CRA</a>
+          <a href="compliance.html#red">RED</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="partners.html">Partners <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="partners.html#partners">Overview</a>
+          <a href="partners.html#implementation-partners">Implementation Partners</a>
+          <a href="partners.html#reseller-partners">Reseller Partners</a>
+          <a href="partners.html#contact">Become a Partner</a>
+        </div>
+      </div>
     </div>
     <a class="nav-cta" href="book-a-demo.html">Free Demo or Trial</a>
   </nav>
@@ -402,7 +425,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="capabilities">
     <h2 data-cms-key="capabilities_title">Key compliance capabilities</h2>
     <div class="feature-grid" style="margin-top: 20px;">
       <div class="feature-card">
@@ -423,7 +446,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="standards">
     <h2 data-cms-key="standards_title">Standards and regulations supported</h2>
     <div class="feature-grid" style="margin-top: 20px;">
       <div class="feature-card">
@@ -456,8 +479,16 @@
         <h3 data-cms-key="std_iot_title">Consumer Electronics &amp; IoT</h3>
         <ul class="list">
           <li data-cms-key="std_iot_0">ETSI EN 303 645 - Consumer IoT Security Baseline Requirements</li>
-          <li id="red" data-cms-key="std_iot_1">RED (Radio Equipment Directive)</li>
-          <li id="cra" data-cms-key="std_iot_2">CRA (Cyber Resilience Act)</li>
+          <li>CRA EN 40000-1-x series</li>
+          <li>RED EN 18031</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <div class="icon"></div>
+        <h3>EU standards</h3>
+        <ul class="list">
+          <li id="cra">The EU Cyber Resilience Act (Regulation (EU) 2024/2847) sets cybersecurity requirements for products with digital elements; it entered into force on 10 December 2024, with main obligations applying from 11 December 2027 (and incident/vulnerability reporting from 11 September 2026).</li>
+          <li id="red">The RED cybersecurity delegated act (Delegated Regulation (EU) 2022/30, amended by (EU) 2023/2444) introduces cybersecurity requirements for in-scope radio equipment and applies from 1 August 2025.</li>
         </ul>
       </div>
       <div class="feature-card">
