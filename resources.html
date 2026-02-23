@@ -165,6 +165,16 @@
       border: 1px solid var(--line);
       box-shadow: 0 20px 40px rgba(15, 30, 43, 0.08);
     }
+    .article-link {
+      display: inline-flex;
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .article-link:hover {
+      text-decoration: underline;
+    }
     .icon {
       width: 44px;
       height: 44px;
@@ -373,6 +383,15 @@
           <a href="industries.html#transportation-logistics">Transportation &amp; Logistics</a>
         </div>
       </div>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="resources.html">Resources <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="resources.html#blog-posts">Blog Posts</a>
+          <a href="resources.html#newsletters">Newsletters</a>
+          <a href="resources.html#articles">Articles</a>
+          <a href="resources.html#faq">FAQ</a>
+        </div>
+      </div>
       <a href="compliance.html">Compliance</a>
       <a href="partners.html">Partners</a>
     </div>
@@ -440,13 +459,15 @@
     <div class="feature-grid" style="margin-top: 20px;">
       <div class="feature-card">
         <div class="icon"></div>
-        <h3>Deep-Dive Technical Articles</h3>
-        <p>Space for long-form content on vulnerability management architecture, HBOM/SBOM governance, and secure lifecycle design.</p>
+        <h3>From Inventory to Action: An SBOM Governance Playbook</h3>
+        <p>A practical framework for turning SBOM generation into continuous governance, risk-based prioritization, and audit-ready execution.</p>
+        <a class="article-link" href="article-sbom-governance-playbook.html">Read article</a>
       </div>
       <div class="feature-card">
         <div class="icon"></div>
-        <h3>Industry Use Cases</h3>
-        <p>Space for sector-focused articles covering automotive, industrial, medical, aerospace, and defense applications.</p>
+        <h3>Bridging the Gap: Vulnerability Management for Developers vs. Quality Control</h3>
+        <p>How development, QC, and security teams can align scanning, triage, and penetration testing into one risk-driven workflow.</p>
+        <a class="article-link" href="article-bridging-the-gap-vm-dev-vs-qc.html">Read article</a>
       </div>
       <div class="feature-card">
         <div class="icon"></div>
