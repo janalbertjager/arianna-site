@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ARIANNA | Bridging the Gap: Vulnerability Management for Developers vs. Quality Control</title>
+  <style>
+    :root {
+      --ink: #0f1e2b;
+      --muted: #5b6b7a;
+      --accent: #1aa5a7;
+      --bg: #f4f7f8;
+      --card: #ffffff;
+      --line: #e2e8ec;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Sora", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+    a { color: inherit; text-decoration: none; }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 8vw;
+      position: sticky;
+      top: 0;
+      background: rgba(244, 247, 248, 0.9);
+      backdrop-filter: blur(8px);
+      z-index: 10;
+      border-bottom: 1px solid rgba(226, 232, 236, 0.6);
+    }
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      color: var(--muted);
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta {
+      padding: 10px 18px;
+      background: #f28a1a;
+      color: #ffffff;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-cta:hover { background: #3fbab7; }
+    .logo { height: 88px; width: auto; }
+    .logo svg { height: 88px; width: auto; display: block; }
+    .hero {
+      padding: 68px 8vw 36px;
+      max-width: 1080px;
+    }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    h1 {
+      font-family: "Merriweather", "Iowan Old Style", "Times New Roman", serif;
+      font-weight: 700;
+      font-size: clamp(30px, 4vw, 50px);
+      line-height: 1.12;
+      margin: 16px 0;
+      max-width: 18ch;
+    }
+    .meta {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+    }
+    .article {
+      padding: 10px 8vw 70px;
+      max-width: 1080px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: clamp(20px, 4vw, 36px);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 36px rgba(15, 30, 43, 0.08);
+    }
+    h2 {
+      font-family: "Merriweather", "Iowan Old Style", "Times New Roman", serif;
+      font-size: clamp(22px, 3vw, 30px);
+      margin: 30px 0 10px;
+    }
+    h2:first-child { margin-top: 0; }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 20px;
+      color: var(--ink);
+    }
+    p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.75;
+      margin: 0 0 16px;
+    }
+    ul, ol {
+      margin: 0 0 16px 20px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+    blockquote {
+      margin: 16px 0;
+      padding: 14px 16px;
+      border-left: 4px solid var(--accent);
+      background: rgba(26, 165, 167, 0.08);
+      color: var(--ink);
+      font-weight: 600;
+    }
+    strong { color: var(--ink); }
+    .back-link {
+      display: inline-flex;
+      margin-top: 12px;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .back-link:hover { text-decoration: underline; }
+    footer {
+      padding: 40px 8vw 60px;
+      background: #0b1823;
+      color: rgba(255, 255, 255, 0.7);
+      display: flex;
+      gap: 48px;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+    footer h4 {
+      color: white;
+      margin: 0 0 10px;
+    }
+    footer p {
+      margin: 0 0 8px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    footer a { color: inherit; }
+    footer a:hover { color: var(--accent); }
+    .footer-contact {
+      justify-self: end;
+      align-self: start;
+    }
+    @media (max-width: 720px) {
+      .nav {
+        flex-wrap: wrap;
+        row-gap: 10px;
+      }
+      .nav-links {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 14px;
+        order: 3;
+      }
+      .nav-cta { margin-left: auto; }
+    }
+  </style>
+  <link rel="stylesheet" href="chatbot.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="logo" aria-label="ARIANNA">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 206.8 67.1" role="img" aria-label="ARIANNA logo">
+        <defs>
+          <style>
+            .cls-1 { fill: #3fbab7; }
+          </style>
+        </defs>
+        <g>
+          <g id="Laag_1">
+            <polygon points="162.1 20.4 159.4 20.4 159.4 31.2 147.7 20.5 147.7 37 150.4 37 150.4 26.3 162.1 36.9 162.1 20.4"/>
+            <path d="M197.8,25.8l2.9,6.3h-5.9l3-6.3ZM189.3,37h2.9l1.3-2.7h8.5l1.3,2.7h2.9l-8.4-16.5-8.4,16.5Z"/>
+            <path d="M136.5,32h-5.9l3-6.3,3,6.3ZM125.1,37h2.9l1.3-2.7h8.5l1.3,2.7h2.9l-8.4-16.5-8.5,16.5Z"/>
+            <polygon points="183.6 20.4 181 20.4 181 31.2 169.3 20.5 169.3 37 172 37 172 26.3 183.6 36.9 183.6 20.4"/>
+            <path d="M98.7,22.7h4.8c.6,0,1.2.1,1.6.4.4.2.7.6.9.9.2.3.3.7.4,1.1,0,.4,0,.7,0,1,0,.5,0,1-.3,1.4-.2.4-.4.7-.7,1-.3.3-.6.5-1,.6-.4.1-.7.2-1,.2h-4.8v-6.5ZM102.6,31.6c.7.9,1.3,1.9,2,2.8.6.9,1.3,1.7,1.9,2.6h3.1c-1.3-1.8-2.6-3.5-3.9-5.3l-.3-.3.4-.2c1-.4,1.8-1.1,2.5-2,.6-.9.9-2,.9-3.2s-.1-1.6-.4-2.3c-.3-.7-.7-1.3-1.1-1.8-.5-.5-1.1-.9-1.8-1.2-.7-.3-1.5-.4-2.3-.4h-7.5v16.6h2.7v-5.5h3.8Z"/>
+            <rect x="116.3" y="20.4" width="2.7" height="16.6"/>
+            <path d="M85.8,32h-5.9l3-6.3,3,6.3ZM74.4,37h2.9l1.3-2.7h8.5l1.3,2.7h2.9l-8.5-16.5-8.4,16.5Z"/>
+            <path class="cls-1" d="M56.8,56.5V.8H1v55.7h20.5v-3.1H4.1V3.9h49.6v49.5h-14.3v-5.6h8.7V9.5H9.7v38.3h13.2c2.4,0,3.9.5,4.7,1.5,1,1.5.8,4.3-.7,8.3-1,2.8-.5,5.7,1.2,7.4,1,.9,2.3,1.4,3.8,1.4s2.8-.4,3.7-.8l-1.2-2.9c-1.9.7-3.4.7-4.3,0-.9-.8-1-2.5-.4-4.1,1.9-5.2,2-8.8.3-11.2-1.3-1.9-3.7-2.8-7.2-2.8h-10.1V12.6h32.2v32.2h-8.7v11.8h20.5Z"/>
+            <polygon class="cls-1" points="36.3 21.3 36.3 36.1 21.5 36.1 21.5 30 30.7 30 30.7 26.9 18.4 26.9 18.4 39.2 39.4 39.2 39.4 18.2 18.4 18.2 18.4 21.3 36.3 21.3"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Platform</a>
+      <a href="industries.html">Industries</a>
+      <a href="compliance.html">Compliance</a>
+      <a href="resources.html">Resources</a>
+      <a href="partners.html">Partners</a>
+    </div>
+    <a class="nav-cta" href="book-a-demo.html">Free Demo or Trial</a>
+  </nav>
+
+  <section class="hero">
+    <div class="eyebrow">Article</div>
+    <h1>Bridging the Gap: Vulnerability Management for Developers vs. Quality Control</h1>
+    <p class="meta">Vulnerability management as a collaborative, risk-driven workflow</p>
+    <a class="back-link" href="resources.html#articles">Back to resources</a>
+  </section>
+
+  <section class="article">
+    <article class="card">
+      <p>In today's fast-paced software landscape, vulnerability management (VM) is no longer a siloed security function. It is a shared responsibility across development, quality control (QC), and security teams. Yet many organizations still treat these disciplines as separate tracks, creating inefficiencies, duplicated effort, and missed risks.</p>
+      <p>This article explores how vulnerability management differs between developers and quality control, and how practices like penetration testing, triaging, and vulnerability scanning can unify the process into a cohesive, risk-driven workflow.</p>
+
+      <h2>1. Two Perspectives on Vulnerability Management</h2>
+      <p>At its core, vulnerability management is about identifying, assessing, prioritizing, and remediating security weaknesses. However, the lens through which vulnerabilities are viewed differs significantly between developers and QC teams.</p>
+
+      <h3>Developers: Prevention and Ownership</h3>
+      <p>For developers, VM is deeply embedded in the software development lifecycle (SDLC). Their focus is:</p>
+      <ul>
+        <li>Writing secure code from the start</li>
+        <li>Fixing vulnerabilities early (shift-left approach)</li>
+        <li>Understanding root causes (for example insecure patterns and dependencies)</li>
+      </ul>
+      <p>Developers benefit from:</p>
+      <ul>
+        <li>Static analysis tools (SAST)</li>
+        <li>Software composition analysis (SCA)</li>
+        <li>Secure coding practices</li>
+      </ul>
+      <p>Their success metric: <strong>reducing the introduction of vulnerabilities</strong>.</p>
+
+      <h3>Quality Control: Detection and Validation</h3>
+      <p>Quality control teams approach VM from a validation perspective:</p>
+      <ul>
+        <li>Testing applications for functional and security defects</li>
+        <li>Verifying whether vulnerabilities are exploitable</li>
+        <li>Ensuring fixes do not break functionality</li>
+      </ul>
+      <p>QC typically relies on:</p>
+      <ul>
+        <li>Dynamic testing (DAST)</li>
+        <li>Manual exploratory testing</li>
+        <li>Regression testing after fixes</li>
+      </ul>
+      <p>Their success metric: <strong>ensuring vulnerabilities are detectable, reproducible, and properly resolved</strong>.</p>
+
+      <h2>2. The Missing Link: Shared Responsibility</h2>
+      <p>The disconnect often arises because developers see vulnerabilities as code issues, QC sees them as test failures, and security teams see them as risk. Without alignment, vulnerabilities fall through the cracks or bounce endlessly between teams.</p>
+      <p>A mature VM program treats vulnerabilities as:</p>
+      <blockquote>Shared artifacts that move through a lifecycle, not isolated findings owned by a single team.</blockquote>
+
+      <h2>3. Where Vulnerability Scanning Fits</h2>
+      <p>Vulnerability scanning plays a foundational role in VM, but it is often misunderstood as "the process" rather than "a step in the process."</p>
+      <h3>Scanning is about discovery, not resolution</h3>
+      <p>Types of scanning include:</p>
+      <ul>
+        <li><strong>SAST</strong> - early detection in code</li>
+        <li><strong>DAST</strong> - runtime behavior analysis</li>
+        <li><strong>Infrastructure scanning</strong> - OS, network, and misconfigurations</li>
+        <li><strong>Dependency scanning (SCA)</strong> - third-party risks</li>
+      </ul>
+      <p>However, scanning alone creates noise if not paired with context (is it exploitable?), ownership (who fixes it?), and priority (how urgent is it?). This is where triaging becomes critical.</p>
+
+      <h2>4. The Critical Role of Triaging</h2>
+      <p>Triaging is the bridge between detection and remediation.</p>
+      <p>A strong triage process answers:</p>
+      <ul>
+        <li>Is this a true positive?</li>
+        <li>What is the business impact?</li>
+        <li>Who owns the fix?</li>
+        <li>What is the remediation timeline?</li>
+      </ul>
+      <h3>Developers' Role in Triaging</h3>
+      <ul>
+        <li>Validate technical feasibility of exploitation</li>
+        <li>Estimate effort to fix</li>
+        <li>Identify root cause</li>
+      </ul>
+      <h3>QC's Role in Triaging</h3>
+      <ul>
+        <li>Reproduce the issue</li>
+        <li>Confirm exploitability in real scenarios</li>
+        <li>Validate fixes post-remediation</li>
+      </ul>
+      <p>Without triage, teams face alert fatigue, misprioritized work, and delayed remediation of critical issues.</p>
+
+      <h2>5. Penetration Testing: Signal Over Noise</h2>
+      <p>Penetration testing adds depth to vulnerability management by focusing on real-world exploitability rather than theoretical risk. But its true value depends on how results are handled.</p>
+      <h3>Common Pitfall: Static Reports</h3>
+      <p>Many organizations treat pentest reports as one-time deliverables:</p>
+      <ul>
+        <li>Findings sit in PDFs</li>
+        <li>No integration with development workflows</li>
+        <li>Limited follow-up</li>
+      </ul>
+      <h3>Best Practice: Integrated Workflow</h3>
+      <p>Penetration testing results should:</p>
+      <ul>
+        <li>Feed directly into backlog systems (for example Jira)</li>
+        <li>Be triaged collaboratively (security + dev + QC)</li>
+        <li>Include clear reproduction steps and impact</li>
+      </ul>
+
+      <h2>6. Sharing and Collaboration: The Core of Effective VM</h2>
+      <p>Vulnerability management breaks down when information is not shared effectively.</p>
+      <h3>What Should Be Shared</h3>
+      <ul>
+        <li>Scan results (with context, not raw output)</li>
+        <li>Triaged vulnerabilities with priority</li>
+        <li>Pen test findings with actionable details</li>
+        <li>Fix status and validation results</li>
+      </ul>
+      <h3>How It Should Be Shared</h3>
+      <ul>
+        <li>Centralized platforms (ticketing systems, dashboards)</li>
+        <li>Standardized severity ratings</li>
+        <li>Clear ownership assignment</li>
+      </ul>
+      <p>Transparency ensures developers understand why something matters, QC knows what to validate, and security maintains risk visibility.</p>
+
+      <h2>7. Toward a Unified Vulnerability Management Lifecycle</h2>
+      <p>A mature VM process integrates all stakeholders into a continuous loop:</p>
+      <ol>
+        <li><strong>Discovery</strong>: Vulnerability scanning + penetration testing</li>
+        <li><strong>Triage</strong>: Risk assessment, prioritization, ownership assignment</li>
+        <li><strong>Remediation</strong>: Developers fix vulnerabilities</li>
+        <li><strong>Validation</strong>: QC verifies fixes and ensures no regressions</li>
+        <li><strong>Feedback Loop</strong>: Lessons learned improve secure development practices</li>
+      </ol>
+
+      <h2>Final Thoughts</h2>
+      <p>Vulnerability management is not a tool or a report. It is a <strong>collaborative discipline</strong>.</p>
+      <ul>
+        <li>Developers prevent and fix</li>
+        <li>QC validates and ensures quality</li>
+        <li>Security contextualizes and prioritizes</li>
+      </ul>
+      <p>When these perspectives align, organizations move from reactive patching to proactive risk management. The real goal is not just to find vulnerabilities, but to build a system where vulnerabilities are efficiently understood, prioritized, and eliminated as part of everyday development.</p>
+      <p>If you are evolving your VM program, start by asking: <strong>Are our teams working in parallel, or actually working together?</strong></p>
+    </article>
+  </section>
+
+  <footer>
+    <div>
+      <h4><a href="company.html">Company</a></h4>
+      <p><a href="company.html#about">About ARIANNA</a></p>
+      <p><a href="company.html#careers">Careers</a></p>
+      <p><a href="resources.html">Resources</a></p>
+    </div>
+    <div class="footer-contact">
+      <h4><a href="contact.html">Contact</a></h4>
+      <p><a href="support.html">Support</a></p>
+      <p><a href="mailto:hello@ariannateam.ai">hello@ariannateam.ai</a></p>
+      <p><a href="tel:+393313482583">+39 331 3482583</a></p>
+    </div>
+  </footer>
+  <script src="chatbot.js"></script>
+</body>
+</html>
