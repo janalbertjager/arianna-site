@@ -3,7 +3,32 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ARIANNA | Contact</title>
+  <title>Contact ARIANNA | Product Security & Compliance Team</title>
+  <meta name="description" content="Contact ARIANNA for questions about vulnerability management, compliance reporting, implementation, and partnerships." />
+  <link rel="canonical" href="https://ariannateam.ai/contact.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact ARIANNA | Product Security & Compliance Team" />
+  <meta property="og:description" content="Get in touch with ARIANNA to discuss your product security and compliance needs." />
+  <meta property="og:url" content="https://ariannateam.ai/contact.html" />
+  <meta property="og:image" content="https://ariannateam.ai/images/ARIANNA_mockup-2_lores.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact ARIANNA | Product Security & Compliance Team" />
+  <meta name="twitter:description" content="Get in touch with ARIANNA to discuss your product security and compliance needs." />
+  <meta name="twitter:image" content="https://ariannateam.ai/images/ARIANNA_mockup-2_lores.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact ARIANNA | Product Security & Compliance Team",
+    "url": "https://ariannateam.ai/contact.html",
+    "description": "Contact ARIANNA for vulnerability management, compliance reporting, implementation, and partnership inquiries.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "ARIANNA",
+      "url": "https://ariannateam.ai/"
+    }
+  }
+  </script>
   <style>
     :root {
       --ink: #0f1e2b;
@@ -424,50 +449,25 @@
     <p>Share your context and priorities, and we will respond with the right next steps.</p>
       <h2>Send us a message</h2>
       <p>Use the form to contact ARIANNA and we will get back to you as soon as possible.</p>
+      <p><strong>Response target:</strong> within 1 business day.</p>
+      <p><strong>What happens next:</strong></p>
+      <ol>
+        <li>We review your message and route it to the right specialist.</li>
+        <li>You get a direct response with concrete next steps.</li>
+        <li>If helpful, we schedule a follow-up call.</li>
+      </ol>
+      <p style="font-size: 14px;">We only use your information to respond to your inquiry.</p>
     </div>
-    <form class="form-card">
-      <div>
-        <label>First name</label>
-        <input type="text" placeholder="Alex" required />
-      </div>
-      <div>
-        <label>Last name</label>
-        <input type="text" placeholder="Johnson" required />
-      </div>
-      <div>
-          <label>Business email</label>
-          <input type="email" placeholder="alex.com" required />
-        </div>
-        <div>
-          <label>Topic</label>
-          <select>
-            <option>General inquiry</option>
-            <option>Product demo</option>
-            <option>Partnership</option>
-            <option>Support</option>
-          </select>
-        </div>
-      <div>
-        <label>Message</label>
-        <textarea rows="4" placeholder="Tell us how we can help."></textarea>
-      </div>
-      <div>
-        <label>Phone</label>
-        <div class="phone-field">
-          <select aria-label="Country code">
-            <option value="+1">+1 (US)</option>
-            <option value="+31">+31 (NL)</option>
-            <option value="+39">+39 (IT)</option>
-            <option value="+44">+44 (UK)</option>
-            <option value="+49">+49 (DE)</option>
-            <option value="+33">+33 (FR)</option>
-            <option value="+91">+91 (IN)</option>
-          </select>
-          <input type="tel" placeholder="123 456 7890" inputmode="tel" pattern="[0-9][0-9\\s-]{5,14}" title="Use 6-15 digits; spaces or hyphens allowed." />
-        </div>
-      </div>
-      <button type="submit">Send Message</button>
-    </form>
+    <div class="form-card">
+      <!-- Nutshell Form -->
+      <div id="nutshell-form-2eagLw-contact"></div>
+      <script>
+      (function(n,u,t){n[u]=n[u]||function(){(n[u].q=n[u].q||[]).push(arguments)}}(window,'Nutsheller'));
+      Nutsheller('initForm', {form: '2eagLw', instance: '341921', authToken: '', target: 'nutshell-form-2eagLw-contact'});
+      </script>
+      <script type="module" src="https://loader.nutshell.com/nutsheller-esm.js"></script>
+      <!-- End Nutshell Form -->
+    </div>
   </section>
   <footer>
     <div>
@@ -524,7 +524,8 @@
       var dismissed = window.localStorage.getItem("arianna_newsletter_dismissed") === "true";
       var lastShown = Number(window.localStorage.getItem("arianna_newsletter_shown_at") || 0);
       var now = Date.now();
-      if (!subscribed && !dismissed && (!lastShown || now - lastShown >= 60000)) {
+      var isHighIntentPage = true;
+      if (!isHighIntentPage && !subscribed && !dismissed && (!lastShown || now - lastShown >= 60000)) {
         setTimeout(function () {
           openOverlay();
           window.localStorage.setItem("arianna_newsletter_shown_at", String(Date.now()));
@@ -605,6 +606,7 @@
         .catch(function () {});
     })();
   </script>
+  <script src="attribution.js"></script>
   <script src="chatbot.js"></script>
 </body>
 </html>
