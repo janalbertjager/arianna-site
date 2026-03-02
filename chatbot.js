@@ -1,7 +1,7 @@
 (function () {
   var quickReplies = [
     { key: "demo", answer: "You can book a demo here: book-a-demo.html" },
-    { key: "trial", answer: "For a trial request, use: book-a-demo.html" },
+    { key: "trial", answer: "For a trial request, use: free-trial.html" },
     { key: "partner", answer: "Partner details are here: partners.html" },
     { key: "compliance", answer: "Compliance information: compliance.html" },
     { key: "industr", answer: "Industry coverage: industries.html" },

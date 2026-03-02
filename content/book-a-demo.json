@@ -4,17 +4,6 @@
   "demo_body_1": "Contact us to schedule a one-hour demo and discuss your specific use case.",
   "demo_body_2": "Share your device stack, compliance requirements, and timeline — we will tailor the walkthrough.",
   "demo_body_3": "Discover how device manufacturers ensure the cybersecurity and compliance of their embedded products during all stages of the product lifecycle.",
-  "trial_title": "Free trial",
-  "trial_body": "Request a trial to evaluate the platform in your own environment and determine how it supports your security and compliance goals.",
-  "form_title": "Schedule a demo or trial",
-  "form_body": "Feel free to fill in the form and we will arrange the free demo or free trial for you so you can experience the ease of use of the ARIANNA vulnerability management platform.",
-  "label_first": "First name",
-  "label_last": "Last name",
-  "label_email": "Business email",
-  "label_request": "Request type",
-  "option_demo": "Demo",
-  "option_trial": "Trial",
-  "label_message": "Message",
-  "label_phone": "Phone",
-  "form_cta": "Free Demo or Trial"
+  "form_title": "Book a tailored demo",
+  "form_body": "Fill in the form and we will arrange a tailored walkthrough of the ARIANNA vulnerability management platform around your products, workflows, and compliance priorities."
 }

@@ -14,6 +14,7 @@ files=(
   "$CONTENT_DIR/compliance.json"
   "$CONTENT_DIR/company.json"
   "$CONTENT_DIR/book-a-demo.json"
+  "$CONTENT_DIR/free-trial.json"
 )
 
 printf "\nChoose a file to edit:\n"
